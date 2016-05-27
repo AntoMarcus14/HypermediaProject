@@ -31,9 +31,28 @@ body{
 }
 
 .background{
-    margin-top:7%;
+    margin-top:9%;
     background-color: white;
     margin-left: 1%;
     width: 98%;
 }
 
+.tab-back{
+    margin-top:9%;
+    margin-left: -0.5%;
+    
+}
+
+.tab-pane{
+    background-color: white;
+    border-left-width: thick;
+    border-left-color: white;
+}
+
+.tab-colon{
+    padding-right: -20px;
+}
+
+.tabs-left{
+    width: 111%;
+}
