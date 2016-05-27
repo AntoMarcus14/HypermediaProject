@@ -59,3 +59,53 @@ body{
     width: 111%;
 }
 >>>>>>> origin/master
+
+#mainColumn{
+    
+}
+ 
+#slideColumn
+{
+    margin-top: 20px;
+    float: left;
+    width: 235px;
+    height: 413px; 
+}
+
+#slideButtonColumn
+{
+    margin-top: 24px;
+    float: left;
+    width: 48px;
+    height: 391px;
+}
+
+#show{
+    margin-left: 30px;
+    margin-right: 34px;
+    margin-top: 170;
+    height:800px;
+    background-color:white;
+}
+
+#slideButton{
+    margin-left: 0px;
+}
+
+#img1{
+    margin-top: 24;
+    margin-left: 5;
+    border: 1px solid black;
+}
+
+#img2{
+    margin-top: 6;
+    margin-left: 5;
+    border: 1px solid black;
+}
+
+#img3{
+    margin-top: 6;
+    margin-left: 5;
+    border: 1px solid black;
+}
