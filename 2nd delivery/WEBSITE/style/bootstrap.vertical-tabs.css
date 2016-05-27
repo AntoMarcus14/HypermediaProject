@@ -40,6 +40,7 @@
 }
 .tabs-left>li>a {
   border-radius: 4px 0 0 4px;
+  background-color: lightgrey;
   margin-right: 0;
   display:block;
 }
