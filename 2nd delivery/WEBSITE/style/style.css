@@ -13,6 +13,22 @@
     height: 17%;
 }
 
+.middleLeftCont{
+    margin-left: 1.5%;
+    margin-top: 5%;
+    border: 1px solid black;
+}
+
+.middleRightCont{
+    margin-right: 1.5%;
+    margin-top: 5%;
+    border: 1px solid black;
+}
+
+#dev{
+    margin-top: -5%;
+}
+
 #image-box{
     background-color: white;
     width: 17%;
