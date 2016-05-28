@@ -3,8 +3,28 @@ $(document).ready(ready);
 function ready(){
 
     console.log("I'm ready!!");
-    
+    var GIndex=1;
+    var GPos=0;
+    var interval;
     var id=1;
+    
+    interval = setInterval(animateGallery, 2000);
+        
+    $("#img1").click(function(){
+        $("#col-sm-9").css("background-image","url(../img/1.png)");
+        clearInterval(interval);
+        
+    });
+    
+    $("#img2").click(function(){
+        $("#col-sm-9").css("background-image","url(../img/2.png)");
+        clearInterval(interval);
+    });
+    
+    $("#img3").click(function(){
+        $("#col-sm-9").css("background-image","url(../img/3.png)");
+        clearInterval(interval);
+    });
     
     $.ajax({
         method: "POST",
@@ -24,4 +44,16 @@ function ready(){
             console.log("Error");
         }
     });
+}
+
+function animateGallery() {
+    if(window.GIndex==3){
+        window.GIndex=1;
+    }else{
+        window.GIndex++;
+    }
+    console.log(window.GIndex);
+
+    $("#col-sm-9").css("background-image","url(../img/"+window.GIndex+".png)");
+    $("#slideArrow").css("margin-top",3+((window.GIndex-1)*133));
 }
