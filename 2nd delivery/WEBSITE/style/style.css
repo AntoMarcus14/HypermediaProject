@@ -26,7 +26,50 @@
 }
 
 #dev{
-    margin-top: -5%;
+    margin-top: -18%;
+    margin-left: 60%;
+}
+
+#prom{
+    margin-top: -14%;
+    margin-bottom: 3%;
+    margin-left: 60%;
+    width:20.5%;
+}
+
+.lowLeftCont{
+    margin-left: 1.5%;
+    margin-top: 5%;
+    border: 1px solid black;
+}
+
+.lowRightCont{
+    margin-right: 1.5%;
+    margin-top: 5%;
+    border: 1px solid black;
+}
+
+#sl{
+    margin-top: -14%;
+    margin-bottom: 3%;
+    margin-left: 60%;
+    width:23%;
+}
+
+#social{
+    margin-top: -13%;
+    margin-bottom: 5.5%;
+    margin-left: 45%;  
+}
+
+.test{
+    margin-left: 7%;
+    margin-top: 9%;
+}
+
+.test2{
+    margin-left: 2%;
+    margin-top: 8%;
 }
 
 #image-box{
