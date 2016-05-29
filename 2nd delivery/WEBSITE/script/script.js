@@ -13,18 +13,24 @@ function Ready(){
         
     $("#img1").click(function(){
         $("#mainImage").attr("src","../img/1.png");
+        window.GIndex=1;
         clearInterval(interval);
+        $("#slideArrow").css("margin-top",40+(window.GIndex-1)*165+"%");
         
     });
     
     $("#img2").click(function(){
         $("#mainImage").attr("src","../img/2.png");
+        window.GIndex=2;
         clearInterval(interval);
+        $("#slideArrow").css("margin-top",40+(window.GIndex-1)*165+"%");
     });
     
     $("#img3").click(function(){
         $("#mainImage").attr("src","../img/3.png");
+        window.GIndex=3;
         clearInterval(interval);
+        $("#slideArrow").css("margin-top",40+(window.GIndex-1)*165+"%");
     });
     
 }
@@ -38,5 +44,5 @@ function animateGallery() {
     console.log(window.GIndex);
 
     $("#mainImage").attr("src","../img/"+window.GIndex+".png");
-    $("#slideArrow").css("margin-top",40+(window.GIndex-1)*165+"%");
+    $("#slideArrow").css("margin-top",40+(window.GIndex-1)*168+"%");
 }
