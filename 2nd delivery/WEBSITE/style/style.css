@@ -139,7 +139,7 @@ body{
 .transition-panel{
     background-color: white;
     text-align: center;
-    width:88%;
+    width:100%;
     padding-top: 1px;
     padding-bottom: 1%;
         
@@ -166,7 +166,17 @@ hr{
     padding-left: 10%;
 }
 
+.SL-name{
+    color: #fe000b;
+    padding-left: 4%;
+}
+
 .color{
     height: 50px; 
     width:auto;
+}
+
+.provaDimensioni{
+    margin-left: -0.8%;  
+    margin-right:-0.6%;
 }
