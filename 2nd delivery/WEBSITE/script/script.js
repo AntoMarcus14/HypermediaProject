@@ -1,49 +1,32 @@
-$(document).ready(ready);
+var GIndex=1;
+var GPos=0;
 
-function ready(){
+$(document).ready(Ready);
+
+function Ready(){
 
     console.log("I'm ready!!");
-    var GIndex=1;
-    var GPos=0;
     var interval;
-    var id=1;
+
     
     interval = setInterval(animateGallery, 2000);
         
     $("#img1").click(function(){
-        $("#col-sm-9").css("background-image","url(../img/1.png)");
+        $("#mainImage").attr("src","../img/1.png");
         clearInterval(interval);
         
     });
     
     $("#img2").click(function(){
-        $("#col-sm-9").css("background-image","url(../img/2.png)");
+        $("#mainImage").attr("src","../img/2.png");
         clearInterval(interval);
     });
     
     $("#img3").click(function(){
-        $("#col-sm-9").css("background-image","url(../img/3.png)");
+        $("#mainImage").attr("src","../img/3.png");
         clearInterval(interval);
     });
     
-    $.ajax({
-        method: "POST",
-        //dataType: "json", //type of data
-        crossDomain: true, //localhost purposes
-        url: "../getDevice.php", //Relative or absolute path to file.php file
-        data: {device:id},
-        success: function(response) {
-            console.log(JSON.parse(response));
-            var devices=JSON.parse(response);    
-            var el+="<div class='course' id='c'><h2>"devices[0].Name"</h2><span>"+devices[0].Description+"</span></div>";             
-            
-            $("body").html(el);
-        },
-        error: function(request,error) 
-        {
-            console.log("Error");
-        }
-    });
 }
 
 function animateGallery() {
@@ -54,6 +37,6 @@ function animateGallery() {
     }
     console.log(window.GIndex);
 
-    $("#col-sm-9").css("background-image","url(../img/"+window.GIndex+".png)");
-    $("#slideArrow").css("margin-top",3+((window.GIndex-1)*133));
+    $("#mainImage").attr("src","../img/"+window.GIndex+".png");
+    $("#slideArrow").css("margin-top",40+(window.GIndex-1)*165+"%");
 }
