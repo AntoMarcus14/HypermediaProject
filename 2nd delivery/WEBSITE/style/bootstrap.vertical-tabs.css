@@ -21,6 +21,8 @@
 }
 .tabs-left>li {
   margin-right: -1px;
+  border-right-color: black;
+  border-right: 10px;
 }
 .tabs-right>li {
   margin-left: -1px;
