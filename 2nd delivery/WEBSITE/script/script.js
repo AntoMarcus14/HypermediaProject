@@ -17,7 +17,7 @@ function Ready(){
         $("#mainImage").attr("src","../img/1.png");
         window.GIndex=1;
         clearInterval(interval);
-        $("#slideArrow").css("margin-top",40+(window.GIndex-1)*165+"%");
+        $("#slideArrow").css("top",8.5+(window.GIndex-1)*32+"%");
         
     });
     
@@ -25,16 +25,20 @@ function Ready(){
         $("#mainImage").attr("src","../img/2.png");
         window.GIndex=2;
         clearInterval(interval);
-        $("#slideArrow").css("margin-top",40+(window.GIndex-1)*165+"%");
+        $("#slideArrow").css("top",8.5+(window.GIndex-1)*32+"%");
     });
     
     $("#img3").click(function(){
         $("#mainImage").attr("src","../img/3.png");
         window.GIndex=3;
         clearInterval(interval);
-        $("#slideArrow").css("margin-top",40+(window.GIndex-1)*165+"%");
+        $("#slideArrow").css("top",8.5+(window.GIndex-1)*32+"%");
     });
     
+    $(window).resize( function(){
+        var h = $("#thirdCol").height();
+        $("#secondCol").height(h);
+    });
 }
 
 function animateGallery() {
@@ -46,5 +50,6 @@ function animateGallery() {
     console.log(window.GIndex);
 
     $("#mainImage").attr("src","../img/"+window.GIndex+".png");
-    $("#slideArrow").css("margin-top",40+(window.GIndex-1)*168+"%");
+    $("#slideArrow").css("top",8.5+(window.GIndex-1)*32+"%");
 }
+

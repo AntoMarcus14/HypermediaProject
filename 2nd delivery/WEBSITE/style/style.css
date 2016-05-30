@@ -1,6 +1,6 @@
 .btn-group-justified{
     margin-left: 1%;
-    margin-top: 1%;
+    margin-top: 0.5%;
     width: 98%;
 }
 
@@ -9,8 +9,16 @@
 }
 
 .top{
+    display: table-row;
+    padding-bottom: 0.3%;
+    padding-top: 0.5%;
     background-color: #0b3d86;
-    height: 17%;
+    
+}
+
+#timLogo{
+    width: 90%;
+    height: auto;
 }
 
 .homeButtonLeft{
@@ -63,24 +71,24 @@
 
 #social{
     position: absolute;
-    width: 50%;
-    top: 30%;
-    left: 25%;
+    width: 52%;
+    top: 25%;
+    left: 42%;
     
     
 }
 
 #socialTag{
     position: absolute;
-    top: -8%;
+    top: -10%;
     left: 5%;
     margin: 0 0 0 0;
 }
 
 #followTag{
     position: absolute;
-    top: 8%;
-    left: 12%;
+    top: 20%;
+    left: 10%;
 }
 
 .test{
@@ -119,10 +127,16 @@ body{
     border: 1px solid black;
 }
 
+#secondCol{
+    position: relative;
+}
+
 #slideArrow{
-    margin-top: 40%;
-    margin-left: -11%;
-    width: 60%;
+    /* margin-top: 40%;
+    margin-left: -11%;  */
+    width: 45%;
+    position: absolute;
+    top: 8.5%;
 }
 
 
