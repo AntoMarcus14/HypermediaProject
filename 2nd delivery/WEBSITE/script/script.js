@@ -7,6 +7,8 @@ function Ready(){
 
     console.log("I'm ready!!");
     var interval;
+    var h = $("#thirdCol").height();
+    $("#secondCol").height(h);
 
     
     interval = setInterval(animateGallery, 2000);
