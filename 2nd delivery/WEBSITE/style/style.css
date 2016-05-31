@@ -238,3 +238,9 @@ hr{
 .btn-color{
     color: #0b3d86;
 }
+
+#timvision-logo-original{
+    width: 90%;
+    height: auto;
+    padding-bottom: 2%;
+}
