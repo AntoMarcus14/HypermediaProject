@@ -170,10 +170,28 @@ body{
     width: 98.8%;
 }
 
+
+.transition-panel{
+    background-color: white;
+    text-align: center;
+    width:98%;
+    padding-top: 0.1%;
+    padding-bottom: 1%;
+        
+}
+
 @media only screen and (max-width : 1367px ) {
     .tab-back{
         margin-left: 0%;
-        width: 150%;
+        width: 99%;
+    }
+    .transition-panel{
+        background-color: white;   
+        text-align: center;
+        width:92%;
+        padding-top: 0.1%;
+        padding-bottom: 1%;
+        
     }
 
 }
@@ -185,14 +203,6 @@ body{
     padding-left: 2%;
 }
 
-.transition-panel{
-    background-color: white;
-    text-align: center;
-    width:98%;
-    padding-top: 0.1%;
-    padding-bottom: 1%;
-        
-}
 
 hr{
     border-top-color: #0b3d86;
@@ -212,7 +222,7 @@ hr{
 
 .device-name{
     color: #fe000b;
-    padding-left: 10%;
+    padding-left: 4%;
 }
 
 .SL-name{
@@ -223,4 +233,8 @@ hr{
 .color{
     height: 50px; 
     width:auto;
+}
+
+.btn-color{
+    color: #0b3d86;
 }
