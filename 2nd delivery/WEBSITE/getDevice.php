@@ -4,7 +4,7 @@
 //echo "I'm the php";
 
 //connection to db
-$mysqli = mysqli_connect("localhost", "root", "", "tim_hyp_db");
+$mysqli = mysqli_connect("localhost", "root", "", "my_tim3m");
 
 //OR die
 if (mysqli_connect_errno()) { //verify connection
