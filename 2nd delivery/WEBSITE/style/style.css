@@ -164,9 +164,18 @@ body{
 
 .tab-back{
     margin-top:9%;
-    margin-left: -0.4%;
-    width: 100%;
-    
+    margin-left: 0.2%;
+    padding-left: 0;
+    padding-right: 0;
+    width: 98.8%;
+}
+
+@media only screen and (max-width : 1367px ) {
+    .tab-back{
+        margin-left: 0%;
+        width: 150%;
+    }
+
 }
 
 
@@ -179,8 +188,8 @@ body{
 .transition-panel{
     background-color: white;
     text-align: center;
-    width:100%;
-    padding-top: 1px;
+    width:98%;
+    padding-top: 0.1%;
     padding-bottom: 1%;
         
 }
@@ -214,9 +223,4 @@ hr{
 .color{
     height: 50px; 
     width:auto;
-}
-
-.provaDimensioni{
-    margin-left: -0.8%;  
-    margin-right:-0.6%;
 }
