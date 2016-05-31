@@ -27,7 +27,8 @@
     width: 98%;
     display: inline-block;
     float: right;
-    position: relative
+    position: relative;
+    border-radius: 10px;
 }
 
 .homeButtonRight{
@@ -37,6 +38,7 @@
     display: inline-block;
     float:left;
     position: relative;
+    border-radius: 10px;
 }
 
 #socialButton{
