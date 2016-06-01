@@ -60,19 +60,19 @@ body{
 #smartp{
     position: relative;
     padding-top: 3%;
-    left: 40%;
+    left: 30%;
 }
 
 #dev{
     position: relative;
     padding-top: 1%;
-    left: 40%;
+    left: 30%;
 }
 
 #modem{
     position: relative;
     padding-top: 1%;
-    left: 40%;
+    left: 30%;
     width:40%;
     height: auto;
     padding-bottom: 7%;
@@ -80,7 +80,7 @@ body{
 
 #tv{
     position: relative;
-    left: 50%;
+    left: 45%;
     padding-bottom: 0.5%;
 }
 
@@ -106,8 +106,8 @@ body{
 }
 
 hr{
-    color: #0b3d89;
-    background: #0b3d89;
+    color: darkgrey;
+    background: darkgrey;
     border: 0;
     height: 1px; 
     margin: 0 0 0 0;
@@ -116,6 +116,6 @@ hr{
 .verticalLine {
     border-left-style: solid;
     border-left-width: 1px;
-    border-color: #0b3d89;
-    margin-bottom: 1%;
+    border-color: darkgrey;
+    
 }
