@@ -49,12 +49,21 @@ body{
     position: relative;
     text-align: center;
     vertical-align: middle;
+    color:red;
 }
 
 .text1{
     position: relative;
     text-align: center;
     vertical-align: middle;
+    color:black;
+}
+
+.text2{
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    color:#0b3d89;
 }
 
 #smartp{
@@ -83,22 +92,52 @@ body{
     padding-bottom: 3%;
 }
 
+#config{
+    position: relative;
+    left: 45%;
+    padding-bottom: 3%;
+    margin-top: 3%;
+}
+
+#phoneline{
+    position: relative;
+    left: 45%;
+    padding-bottom: 3%;
+    width:25%;
+    margin-top: 2%;
+}
+
 #outlet{
     position: relative;
     left: 30%;
     padding-bottom: 3%;
 }
 
-.text2{
+#paycard{
     position: relative;
-    text-align: center;
-    padding-left: 20%;
+    left: 26%;
+    padding-bottom: 3%;
+}
+
+#assist{
+    position: relative;
+    left: 26%;
+    padding-bottom: 3%;
+    margin-top: 3%;
 }
 
 .text3{
     position: relative;
     text-align: center;
+    padding-left: 20%;
+    color:#0b3d89;
+}
+
+.text4{
+    position: relative;
+    text-align: center;
     padding-right: 20%;
+    color:#0b3d89;
 }
 
 hr{
@@ -116,4 +155,24 @@ hr{
     border-left-width: 1px;
     border-color: darkgrey;
     
+}
+
+.button {
+    background-color: #0b3d89; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.highButton {
+    border-radius: 4px;
+    position: relative;
+    left: 45.5%;
+    margin-top: 1%;
 }
