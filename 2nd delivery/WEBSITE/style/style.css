@@ -276,15 +276,11 @@ hr{
 }
 
 .priceTag{
+    margin-top: 2%;
     width: 100%;
     text-align: center;
 }
 
-.fullPrice{
-    display: inline-block;
-    margin-right: 50%;
-}
-
-.monthPrice{
-    display: inline-block;
+h3.price{
+   margin-top: 10px; 
 }
