@@ -239,6 +239,7 @@ hr{
 .color{
     height: 50px; 
     width:auto;
+    margin-left: 2%;
 }
 
 .btn-color{
@@ -252,6 +253,38 @@ hr{
 }
 
 #mainDeviceImg{
-    width: 70%;
+    width: 80%;
     height: auto;
+}
+
+.imageGallery{
+    text-align: center;
+    margin-bottom: 2%;
+    position: relative;
+    margin-top: -4%;
+}
+
+.devicePic{
+    width: 20%;
+    margin-right: 2%;
+    margin-top: 2%;
+    border: 1px solid black;
+}
+
+.price{
+    color: #fe000b;
+}
+
+.priceTag{
+    width: 100%;
+    text-align: center;
+}
+
+.fullPrice{
+    display: inline-block;
+    margin-right: 50%;
+}
+
+.monthPrice{
+    display: inline-block;
 }
