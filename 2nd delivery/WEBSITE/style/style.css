@@ -204,7 +204,7 @@ body{
 }
 
 
-hr{
+.hr-link{
     border-top-color: #0b3d86;
 }
 
@@ -220,12 +220,7 @@ hr{
     
 }
 
-.device-name{
-    color: #fe000b;
-    padding-left: 4%;
-}
-
-.SL-name{
+.title-with-tab{
     color: #fe000b;
     padding-left: 4%;
 }
@@ -243,4 +238,59 @@ hr{
     width: 90%;
     height: auto;
     padding-bottom: 2%;
+}
+
+/****************************************************************************
+SL-Category
+***********************************************************+++********/
+
+/*
+title-without-tab = formattazione titolo per pagine senza tab a sinistra
+*/
+.title-without-tab{
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    color: #fe000b;
+}
+
+/*
+top-descriotion = formattazione descrizione subito dopo titolo
+*/
+.top-description{
+    position:relative;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*
+category-subtitle = formattazione nome della categoria nella pagina delle categorie
+*/
+
+.image-container{
+    text-align: center;
+}
+
+.category-subtitle{
+    position:relative;
+    text-align: center;
+    vertical-align: middle;
+    color: #0b3d86;
+}
+
+#SL-category-images{
+    position: relative;
+    padding-bottom: 3%;
+}
+
+#SL-category-hr{
+    border-top-color: lightgray;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.verticalLine {
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: lightgray;
 }
