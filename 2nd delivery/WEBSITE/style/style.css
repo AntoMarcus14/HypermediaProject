@@ -1,3 +1,6 @@
+/*********************************************
+    NAVBAR
+**********************************************/
 .btn-group-justified{
     margin-left: 1%;
     margin-top: 0.5%;
@@ -21,6 +24,9 @@
     height: auto;
 }
 
+/*********************************************
+        HOME
+**********************************************/
 .homeButtonLeft{
     border: 1px solid black;
     margin-top: 5%;
@@ -243,4 +249,9 @@ hr{
     width: 90%;
     height: auto;
     padding-bottom: 2%;
+}
+
+#mainDeviceImg{
+    width: 70%;
+    height: auto;
 }
