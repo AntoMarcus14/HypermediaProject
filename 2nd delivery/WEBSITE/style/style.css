@@ -247,7 +247,6 @@ body{
     padding-bottom: 2%;
 }
 
-<<<<<<< HEAD
 /****************************************************************************
 SL-Category
 ***********************************************************+++********/
@@ -301,7 +300,9 @@ category-subtitle = formattazione nome della categoria nella pagina delle catego
     border-left-style: solid;
     border-left-width: 1px;
     border-left-color: lightgray;
-=======
+
+}
+
 #mainDeviceImg{
     width: 80%;
     height: auto;
@@ -333,9 +334,6 @@ category-subtitle = formattazione nome della categoria nella pagina delle catego
 
 h3.price{
    margin-top: 10px; 
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
 }
 
 .colorTag{
@@ -354,5 +352,4 @@ h3.price{
 
 .techName{
     color: #0b3d86;
->>>>>>> origin/master
 }
