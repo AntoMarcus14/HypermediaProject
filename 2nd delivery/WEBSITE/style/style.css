@@ -315,6 +315,10 @@ category-subtitle = formattazione nome della categoria nella pagina delle catego
 end of SL category
 ********************************************************************************************************/
 
+
+/******************************************
+      Device page
+******************************************/
 #mainDeviceImg{
     width: 80%;
     height: auto;
@@ -364,4 +368,9 @@ h3.price{
 
 .techName{
     color: #0b3d86;
+}
+
+.slList{
+    list-style-type: none;
+    padding-left: 0;
 }

@@ -15,17 +15,20 @@ else {
     //echo "Successful connection\n"; // connection ok
 
     # extract results mysqli_result::fetch_array
-    $query = " SELECT * FROM device ";
+    $query = " SELECT * FROM device INNER JOIN TechCharacteristics ON device.Name = TechCharacteristics.Device ";
     //query execution
     $result = mysqli_query($mysqli, $query);
     //if there are data available
-    if($numRows=mysqli_num_rows($result) >0)
+    if(mysqli_num_rows($result) >0)
     {
-        //echo $numRows;
+        //echo mysqli_num_rows($result);
         $myArray = array();//create an array
-        foreach(mysqli_fetch_array($result, MYSQLI_ASSOC) as $row) {
+        while($row = mysqli_fetch_assoc($result)) {
             
+            //echo $row["Category"];
             $myArray[] = $row;
+            //$i++;
+            //echo $row[0];
         }
     
         //var_dump($myArray);
