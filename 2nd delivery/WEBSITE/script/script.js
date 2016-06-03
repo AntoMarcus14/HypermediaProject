@@ -1,15 +1,15 @@
 var GIndex=1;
 var GPos=0;
 
+
 $(document).ready(Ready);
 
 function Ready(){
+    
+    $("#secondCol").height($("#thirdCol").height());
 
     console.log("I'm ready!!");
     var interval;
-    var h = $("#thirdCol").height();
-    $("#secondCol").height(h);
-
     
     interval = setInterval(animateGallery, 2000);
         
