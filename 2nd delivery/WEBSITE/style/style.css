@@ -247,9 +247,9 @@ body{
     padding-bottom: 2%;
 }
 
-/****************************************************************************
+/*********************************************************************************************************************
 SL-Category
-***********************************************************+++********/
+*********************************************************************************************************************/
 
 /*
 title-without-tab = formattazione titolo per pagine senza tab a sinistra
@@ -273,6 +273,15 @@ top-descriotion = formattazione descrizione subito dopo titolo
 /*
 category-subtitle = formattazione nome della categoria nella pagina delle categorie
 */
+
+.background-category{
+    margin-top:9%;
+    background-color: white;
+    margin-left: 5%;
+    width: 90%;
+    margin-bottom: 2%;
+    padding-bottom: 2%;
+}
 
 .image-container{
     text-align: center;
@@ -302,6 +311,9 @@ category-subtitle = formattazione nome della categoria nella pagina delle catego
     border-left-color: lightgray;
 
 }
+/*******************************************************************************************************
+end of SL category
+********************************************************************************************************/
 
 #mainDeviceImg{
     width: 80%;
