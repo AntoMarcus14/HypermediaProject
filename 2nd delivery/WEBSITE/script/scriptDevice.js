@@ -35,9 +35,17 @@ function ready(){
             $(".monthPrice").html(devices[0].MonthPrice.replace("euro","€"));
             $(".color").attr("src",devices[0].Color);
             $("#mainDeviceImg").attr("src",devices[0].Image1);
-            $("#1devicePic").attr("src",devices[0].Image1);
-            $("#2devicePic").attr("src",devices[0].Image2);
-            $("#3devicePic").attr("src",devices[0].Image3);
+            if(devices[0].Image2=="null"){
+                $("#1devicePic").hide();
+                $("#2devicePic").hide();
+                $("#3devicePic").hide();
+            }
+            else {
+                $("#1devicePic").attr("src",devices[0].Image1);
+                $("#2devicePic").attr("src",devices[0].Image2);
+                $("#3devicePic").attr("src",devices[0].Image3);
+            }
+            
             $(".slList").html(devices[0].SLServices);
             var tab="";
             delete devices[0].Name;
