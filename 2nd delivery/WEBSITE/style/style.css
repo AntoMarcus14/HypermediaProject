@@ -374,3 +374,61 @@ h3.price{
     list-style-type: none;
     padding-left: 0;
 }
+
+/*********************************************************************************************************************
+WhoWeAre
+*********************************************************************************************************************/
+
+#leftImg{
+    width:80%;
+    position: relative;
+    left: 5%;
+    padding-top: 15%;
+    padding-bottom: 15%
+}
+
+#rightImg{
+    position: relative;
+    width: 80%;
+    margin-top: -25%;
+    left: 12%;
+    padding-bottom: 5%;
+}
+
+.secondTitle{
+    position: relative;
+    padding-top: 4%;
+    color:#0b3d86;
+    left:1%;
+    width:98%;
+}
+
+.descript{
+    position: relative;
+    left: 2%;
+    width: 105%;
+}
+
+.thirdTitle{
+    position: relative;
+    color: #0b3d86;
+    text-align: center;
+    margin: 0 0 0 0;
+}
+
+.fourthTitle{
+    position: relative;
+    text-align:center;
+    color:#cc0000;
+}
+
+.bordered{
+    border: 1px solid black;
+    position: relative;
+    left:5%;
+    width:90%;
+}
+
+.bottomUp{
+    margin-bottom: 1%;
+}
