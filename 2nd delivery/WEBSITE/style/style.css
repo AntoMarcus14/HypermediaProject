@@ -427,8 +427,40 @@ WhoWeAre
     position: relative;
     left:5%;
     width:90%;
+    border-radius: 10px;
 }
 
 .bottomUp{
     margin-bottom: 1%;
+}
+
+.firstTitle{
+    position: relative;
+    padding-top: 1%;
+    color:#0b3d86;
+    text-align: center;
+}
+
+.textDescript{
+    position: relative;
+    left: 2%;
+    width:96%;
+}
+
+.rightImgTest{
+    position: relative;
+    width: 70%;
+    margin-top: 5%;
+    left: 12%;
+}
+
+.rightImgTest2{
+    margin-top: 10%;
+}
+
+.rightImgTest3{
+    position: relative;
+    width: 40%;
+    margin-top: 12%;
+    left:30%;
 }
