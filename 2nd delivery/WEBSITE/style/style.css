@@ -375,6 +375,66 @@ h3.price{
     padding-left: 0;
 }
 
+
+.inputGroup{
+    background-color: lightgrey;
+    padding-top: 4%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 3%;
+    margin-left: 0;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.inputGroupTitle{
+
+    margin-bottom: 0;
+    margin-top: 4%;
+}
+
+.purchaseSummary{
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-top: 11.8%;
+    margin-right: 2%;
+    text-align: center;
+}
+
+.purchaseSummary>h3{
+    color: #fe000b;
+}
+
+.purchaseSummary>hr{
+    border-top-color: black;
+    margin-bottom: 2px;
+}
+
+.purchaseSummary>h5{
+    text-align: left;
+    margin-left: 2%;
+}
+
+.purchaseSummary>h2{
+    text-align: left;
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+.purchaseSummary>.price{
+    text-align: left;
+    margin-left: 4%;
+}
+
+#buyDeviceImage{
+    width: 75%;
+    height: auto;
+}
+
+#buy{
+    padding-bottom: 2%;
+}
+
 /*********************************************************************************************************************
 WhoWeAre
 *********************************************************************************************************************/
@@ -432,3 +492,4 @@ WhoWeAre
 .bottomUp{
     margin-bottom: 1%;
 }
+

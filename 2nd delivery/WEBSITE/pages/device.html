@@ -88,8 +88,86 @@
         </table>
     </div>
     <div id="buy" class="tab-pane fade">
-      <h1 class="device-name title-with-tab">HOME</h1>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+      <div class="row">
+        <div class="col-xs-8">
+          <h4 class="inputGroupTitle">Landline Data</h4>
+          <form role="form" class="inputGroup row">
+            
+            <div class="form-group col-xs-3">
+                <label>Prefix</label>
+                <input type="text" class="form-control" id="email">
+            </div>
+            <div class="form-group col-xs-6">
+                <label>Number</label>
+                <input type="text" class="form-control" id="pwd">
+            </div>
+          </form>
+          <h4 class="inputGroupTitle">Personal Data</h4>
+          <form role="form" class="inputGroup row">
+            <div class="form-group col-xs-6">
+                <label>Name</label>
+                <input type="text" class="form-control" id="email">
+            </div>
+            <div class="form-group col-xs-6">
+                <label>Surname</label>
+                <input type="text" class="form-control" id="pwd">
+            </div>
+            <div class="form-group col-xs-4">
+                <label>Birth Date</label>
+                <input type="date" class="form-control" id="email">
+            </div>
+            <div class="form-group col-xs-8">
+                <label>Place of Birth</label>
+                <input type="text" class="form-control" id="pwd">
+            </div>
+            <div class="form-group col-xs-8">
+                <label>Email</label>
+                <input type="text" class="form-control" id="pwd">
+            </div>
+          </form>
+          <h4 class="inputGroupTitle">Shipping Data</h4>
+          <form role="form" class="inputGroup row">
+            <div class="form-group col-xs-9">
+                <label>Address</label>
+                <input type="text" class="form-control" id="email">
+            </div>
+            <div class="form-group col-xs-9">
+                <label>City</label>
+                <input type="text" class="form-control" id="pwd">
+            </div>
+            <div class="form-group col-xs-5">
+                <label for="sel1">Country</label>
+                        <select class="form-control" id="sel1">
+                        <option>Select your country</option>
+                        <option>England</option>
+                        <option>France</option>
+                        <option>Italy</option>
+                </select>
+            </div>
+            <div class="form-group col-xs-2">
+            </div>
+            <div class="form-group col-xs-4">
+                <label>ZIP Code</label>
+                <input type="text" class="form-control" id="pwd">
+            </div>
+          </form>
+        </div>
+        <div class="col-xs-4">
+            <div class="purchaseSummary">
+                <h3>SUMMARY</h3>
+                <hr>
+                <h4>Device name</h4>
+                <img id="buyDeviceImage" alt="device image">
+                <h5>Price:</h5>
+                <h3 class="price devicePrice"></h3>
+                <h5>Shipping cost:</h5>
+                <h3 class="price">0,00€</h3>
+                <hr>
+                <h2>Total cost:</h2>
+                <h2 class="price devicePrice"></h2>
+            </div>
+        </div>
+      </div>
     </div>
    </div>
   </div>

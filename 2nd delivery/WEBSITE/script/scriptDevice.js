@@ -35,6 +35,10 @@ function ready(){
             $(".monthPrice").html(devices[0].MonthPrice.replace("euro","€"));
             $(".color").attr("src",devices[0].Color);
             $("#mainDeviceImg").attr("src",devices[0].Image1);
+            $("#buyDeviceImage").attr("src",devices[0].Image1);
+            $(".purchaseSummary" + ">h4").html(devices[0].Name);
+            var price=devices[0].FullPrice.replace("euro","€");
+            $(".purchaseSummary" + ">.devicePrice").html(price.slice(price.indexOf(">")+1,price.lastIndexOf("<")));
             if(devices[0].Image2=="null"){
                 $("#1devicePic").hide();
                 $("#2devicePic").hide();
@@ -48,21 +52,12 @@ function ready(){
             
             $(".slList").html(devices[0].SLServices);
             var tab="";
-            delete devices[0].Name;
-            delete devices[0].Description;
-            delete devices[0].Category;
-            delete devices[0].FullPrice;
-            delete devices[0].MonthPrice;
-            delete devices[0].Image1;
-            delete devices[0].Image2;
-            delete devices[0].Image3;
-            delete devices[0].Color;
-            delete devices[0].SLServices;
-            delete devices[0].Device;
+            var i=0;
             for(var index in devices[0]) {
-                if (devices[0].hasOwnProperty(index)) {
+                if (devices[0].hasOwnProperty(index)&&i>=11) {
                     tab=tab+"<tr><td>" + index + "</td><td>" + devices[0][index] + "</td></tr> ";
                 }
+                i++;
             }
             $("#tech" + ">Table").html(tab);
             
