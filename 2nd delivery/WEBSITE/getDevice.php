@@ -15,7 +15,7 @@ else {
     //echo "Successful connection\n"; // connection ok
 
     # extract results mysqli_result::fetch_array
-    $query = " SELECT * FROM device INNER JOIN TechCharacteristics ON device.Name = TechCharacteristics.Device ";
+    $query = " SELECT * FROM device LEFT JOIN TechCharacteristics ON device.Name = TechCharacteristics.Device WHERE device.Name ='Samsung Gear Fit' ";
     //query execution
     $result = mysqli_query($mysqli, $query);
     //if there are data available

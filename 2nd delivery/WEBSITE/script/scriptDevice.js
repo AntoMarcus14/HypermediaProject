@@ -31,14 +31,14 @@ function ready(){
             
             $(".device-name").html(devices[0].Name);
             $(".description").html(devices[0].Description);
-            $(".fullPrice").html(devices[0].FullPrice.replace("euro","€"));
+            var price=devices[0].FullPrice.replace("euro","€");
+            $(".fullPrice" + ">h3").html(price + " €");
             $(".monthPrice").html(devices[0].MonthPrice.replace("euro","€"));
             $(".color").attr("src",devices[0].Color);
             $("#mainDeviceImg").attr("src",devices[0].Image1);
             $("#buyDeviceImage").attr("src",devices[0].Image1);
             $(".purchaseSummary" + ">h4").html(devices[0].Name);
-            var price=devices[0].FullPrice.replace("euro","€");
-            $(".purchaseSummary" + ">.devicePrice").html(price.slice(price.indexOf(">")+1,price.lastIndexOf("<")));
+            $(".purchaseSummary" + ">.devicePrice").html(price+ " €");
             if(devices[0].Image2=="null"){
                 $("#1devicePic").hide();
                 $("#2devicePic").hide();
@@ -54,7 +54,7 @@ function ready(){
             var tab="";
             var i=0;
             for(var index in devices[0]) {
-                if (devices[0].hasOwnProperty(index)&&i>=11) {
+                if (devices[0].hasOwnProperty(index)&&i>=11&&devices[0][index]!=null) {
                     tab=tab+"<tr><td>" + index + "</td><td>" + devices[0][index] + "</td></tr> ";
                 }
                 i++;
