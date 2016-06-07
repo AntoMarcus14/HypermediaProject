@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>TIM 3M</title>
+  <title>Device Category</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../style/catOfDev.css">
+  <link rel="stylesheet" href="../style/style.css">
   <script src="../script/jquery-1.12.3.js" type="text/javascript"></script>
   <script src="../script/script.js" type="text/javascript"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -25,48 +25,38 @@
             <a href="#" class="btn btn-default">Request Info</a>
         </div>
     </nav>
-    <div class="container-fluid background">
-      <div class="row">
-         <h1 class="text0" style="color:red"> Devices </h1>    
-      </div>
-      <div class="row">
-         <h4 class="text1"> Smartphones, Tablet, Home telephones,
+    <div class="container-fluid background-category">
+        <div class="row">
+         <h1 class="title-without-tab"> Devices </h1>    
+         <h4 class="top-description"> Smartphones, Tablet, Home telephones,
              networking and Smart devices even by installments on the TIM account </h4>    
-      </div>
+        </div>
+        <br>
       <div class="row">
-         <div class="col-sm-4">
-               <h3 class="text2">Smartphone and Telephones</h3>
-               <img id="smartp" src="../img/Smartphone.png" >
+         <div class="col-sm-4 image-container">
+               <h3 class="category-subtitle">Smartphone and Telephones</h3>
+               <img class="category-images" src="../img/Smartphone.png" >
          </div>
-         <div class="col-sm-4">
-             <div class="verticalLine">
-               <h3 class="text2">Tablet and Computers</h3>
-               <img id="dev" src="../img/ico_menu_small_prodotti.png" > 
-             </div>
+         <div class="col-sm-4 verticalLine image-container">
+               <h3 class="category-subtitle">Tablet and Computers</h3>
+               <img class="category-images" src="../img/ico_menu_small_prodotti.png" > 
          </div>
-         <div class="col-sm-4">
-             <div class="verticalLine">
-               <h3 class="text2">Modems and Networking</h3>
-               <img id="modem" src="../img/Modem.png" >
-             </div>
+         <div class="col-sm-4 verticalLine image-container">
+               <h3 class="category-subtitle">Modems and Networking</h3>
+               <img class="category-images" src="../img/Modem.png" >
          </div>      
       </div>
-        <hr>
+        <hr id="SL-category-hr">
       <div class="row">
-         <div class="col-sm-6">
-             <br>
-               <h3 class="text3">TV and Smart Living</h3>
-               <img id="tv" src="../img/TV.png" >
+         <div class="col-sm-6 image-container">
+               <h3 class="category-subtitle">TV and Smart Living</h3>
+               <img class="category-images" src="../img/TV.png" >
          </div>
-         <div class="col-sm-6">
-             <div class="verticalLine">
-                 <br>
-               <h3 class="text4">Outlet</h3>
-               <img id="outlet" src="../img/Outlet.png" > 
-             </div>
+         <div class="col-sm-6 verticalLine image-container">
+               <h3 class="category-subtitle">Outlet</h3>
+               <img class="category-images" src="../img/Outlet.png" > 
          </div>
       </div> 
-        <br>
     </div>    
 </body>
 </html>
