@@ -605,3 +605,7 @@ Button to go to the highlights in AssistanceService page
     float: right;
     height: 120%;
 }
+
+.panel-title{
+    font-size: 20px; 
+}
