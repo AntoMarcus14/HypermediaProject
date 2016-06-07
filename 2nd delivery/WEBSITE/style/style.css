@@ -215,10 +215,13 @@ body{
 }
 
 .group-links{
-    position: fixed;
-    bottom: 2%;
-    right: 33%;
+    text-align: center;
     color: #0b3d86;
+}
+
+.groupLinkContainer{
+    text-align: center;
+    margin-top: 1%;
 }
 
 .glyphicon{
