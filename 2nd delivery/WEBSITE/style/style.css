@@ -298,7 +298,7 @@ category-subtitle = formattazione nome della categoria nella pagina delle catego
     color: #0b3d86;
 }
 
-#SL-category-images{
+.category-images{
     position: relative;
     padding-bottom: 3%;
 }
@@ -557,4 +557,26 @@ WhoWeAre
 
 .testimonialsImage{
     text-align: center;
+}
+
+/********************************************************************************
+Button to go to the highlights in AssistanceService page
+********************************************************************************/
+
+.highButton {
+    text-align: center;
+    margin-top: 2%;
+}
+
+.high{
+    position: relative;
+    background-color: #0b3d89; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 0.5% 6% 0.5% 6%;
 }
