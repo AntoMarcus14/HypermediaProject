@@ -207,6 +207,7 @@ body{
     margin-left: -2%; 
     width: 85.3%;
     padding-left: 2%;
+    background-color:white
 }
 
 
@@ -505,7 +506,7 @@ WhoWeAre
 }
 
 .fourthTitle{
-    position: relative;
+    margin-top: 5%;
     text-align:center;
     color: #fe000b;
 }
@@ -545,10 +546,8 @@ WhoWeAre
 }
 
 .rightImgTest3{
-    position: relative;
-    width: 40%;
-    margin-top: 12%;
-    left:30%;
+    width: 50%;
+    margin-top: 3%;
 }
 
 .videoTag{
@@ -556,6 +555,10 @@ WhoWeAre
 }
 
 .testimonialsImage{
+    text-align: center;
+}
+
+.imageColWWA{
     text-align: center;
 }
 
@@ -579,4 +582,26 @@ Button to go to the highlights in AssistanceService page
     cursor: pointer;
     border-radius: 4px;
     padding: 0.5% 6% 0.5% 6%;
+}
+
+/********************************************************************************
+       Assistance service page
+********************************************************************************/
+
+.asImage{
+    width: 40%;
+}
+
+.imageRow{
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+#accordion{
+    width: 98%;
+}
+
+.faqIcon{
+    float: right;
+    height: 120%;
 }
