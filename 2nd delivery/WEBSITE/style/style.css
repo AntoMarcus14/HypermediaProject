@@ -222,6 +222,7 @@ body{
 .groupLinkContainer{
     text-align: center;
     margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 .glyphicon{
@@ -535,10 +536,8 @@ WhoWeAre
 }
 
 .rightImgTest{
-    position: relative;
     width: 70%;
-    margin-top: 5%;
-    left: 12%;
+    margin-top: 4%;
 }
 
 .rightImgTest2{
@@ -550,4 +549,12 @@ WhoWeAre
     width: 40%;
     margin-top: 12%;
     left:30%;
+}
+
+.videoTag{
+   margin-top: 10%; 
+}
+
+.testimonialsImage{
+    text-align: center;
 }
