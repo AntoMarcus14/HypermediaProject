@@ -1,13 +1,24 @@
 $(document).ready(ready);
-var noVerticalDiv = "<div class=\"col-sm-6 image-container\">\
+var noVerticalDiv1 = "<div class=\"col-sm-6 image-container\">\
                     <h3 class=\"category-subtitle\"></h3>\
                     <img class=\"category-images\">\
                 </div>";
-var verticalDiv = "<div class=\"col-sm-6 verticalLine image-container\">\
+var verticalDiv1 = "<div class=\"col-sm-6 verticalLine image-container\">\
+                    <h3 class=\"category-subtitle\"></h3>\
+                    <img class=\"category-images\">\
+                </div>" ;
+var noVerticalDiv2 = "<div class=\"col-sm-4 image-container\">\
+                    <h3 class=\"category-subtitle\"></h3>\
+                    <img class=\"category-images\">\
+                </div>";
+var verticalDiv2 = "<div class=\"col-sm-4 verticalLine image-container\">\
                     <h3 class=\"category-subtitle\"></h3>\
                     <img class=\"category-images\">\
                 </div>" ;
 var hrDiv = "<hr id=\"SL-category-hr\">";
+var highlightButton = "<div class=\"row highButton\">\
+         <button class=\"button high\">Highlights</button>\
+      </div>"
 function ready(){
     
     
@@ -30,16 +41,16 @@ function ready(){
                 content=content+"<div class=\"row\">";
                 j = category.length - i;
                 if(j==1){
-                    content = content + noVerticalDiv + "</div>";
+                    content = content + noVerticalDiv1 + "</div>";
                     i++;
                 } else if(j==2 || j==4){
-                    content = content + noVerticalDiv + verticalDiv + "</div>";
+                    content = content + noVerticalDiv1 + verticalDiv1 + "</div>";
                     i = i+2;
                     if(j==4){
                         content = content + hrDiv;
                     }
                 } else if(j==3 || j>4){
-                    content = content + noVerticalDiv + verticalDiv + verticalDiv + "</div>";
+                    content = content + noVerticalDiv2 + verticalDiv2 + verticalDiv2 + "</div>";
                     i = i+3;
                     if(j>4){
                         content = content + hrDiv;                        
@@ -47,6 +58,9 @@ function ready(){
                 }
             }
             $(".background-category").append(content);
+            if(type1=="Assistance Services"){
+                $(".background-category").append(highlightButton);
+            }
             $(".category-subtitle").each(function(i,element){
                 $(element).html(category[i].Title);
             })
