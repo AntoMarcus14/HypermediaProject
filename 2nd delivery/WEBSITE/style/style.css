@@ -609,3 +609,14 @@ Button to go to the highlights in AssistanceService page
 .panel-title{
     font-size: 20px; 
 }
+
+/***********************************************************************************
+    SL Service
+***********************************************************************************/
+#rightImgSL{
+    position: relative;
+    width: 80%;
+    margin-top: 5%;
+    left: 12%;
+    padding-bottom: 2%;
+}
