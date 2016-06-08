@@ -620,3 +620,16 @@ Button to go to the highlights in AssistanceService page
     left: 12%;
     padding-bottom: 2%;
 }
+
+.borderedTopDown{
+    border-bottom: 1px solid black; 
+    border-top: 1px solid black;
+    position: relative;
+}
+
+.panel-back2{
+    margin-left: -2%; 
+    width: 85.3%;
+    padding-left: 1%;
+    background-color:white
+}
