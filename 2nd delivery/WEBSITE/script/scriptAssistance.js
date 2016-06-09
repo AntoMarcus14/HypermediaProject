@@ -37,7 +37,7 @@ function ready(){
             $(".asDescription").html(aService[0].Description);
             $(".asImage").attr("src", aService[0].Image);
             
-            if(aService[0].hasOwnProperty('Question')){
+            if(aService[0].hasOwnProperty('Question') && aService[0].Question!=null){
                 var faqContent=firstPanel;
                 for(i=1; i<aService.length; i++) {
                     faqContent=faqContent + nextPanel;
@@ -49,10 +49,12 @@ function ready(){
                         $(element).find(".panel-collapse").attr("id","collapse" + i);
                         $(element).find(".panel-body").html(aService[i].Answer.replace(/euro/g,"€"));
                 });
+                console.log("finished1");
             }
             else{
-                $("#faq").hide();
+                $("#faqTab").hide();
             }
+            console.log("finished2");
         },
         error: function(request,error) 
         {
@@ -60,18 +62,13 @@ function ready(){
         }
     });  
 
-  /*$(".panel-title").on(click, function(){
-      $(this).find("span").attr("class","glyphicon glyphicon-plus-sign faqIcon");
-  }):
-  $(".panel-title").on(click, function(){
-      $(this).find("span").attr("class","glyphicon glyphicon-plus-sign faqIcon");
-  }):*/
+   
 
-  $(".panel-collapse").on("hide.bs.collapse", function(){
+  $(document).on("hide.bs.collapse", ".panel-collapse", function(){
       console.log("Hiding");
       $(this).parent().find("span").attr("class","glyphicon glyphicon-plus-sign faqIcon");
   });
-  $(".panel-collapse").on("show.bs.collapse", function(){
+  $(document).on("show.bs.collapse", ".panel-collapse", function(){
       $(this).parent().find("span").attr("class","glyphicon glyphicon-minus-sign faqIcon");
   }); 
 }
