@@ -1,27 +1,57 @@
 $(document).ready(ready);
-var noVerticalDiv1 = "<div class=\"col-sm-6 image-container\">\
-                    <h3 class=\"category-subtitle\"></h3>\
-                    <img class=\"category-images\">\
-                </div>";
-var verticalDiv1 = "<div class=\"col-sm-6 verticalLine image-container\">\
-                    <h3 class=\"category-subtitle\"></h3>\
-                    <img class=\"category-images\">\
-                </div>" ;
-var noVerticalDiv2 = "<div class=\"col-sm-4 image-container\">\
-                    <h3 class=\"category-subtitle\"></h3>\
-                    <img class=\"category-images\">\
-                </div>";
-var verticalDiv2 = "<div class=\"col-sm-4 verticalLine image-container\">\
-                    <h3 class=\"category-subtitle\"></h3>\
-                    <img class=\"category-images\">\
-                </div>" ;
+
+var noVerticalDiv1 = "<div class=\"col-sm-6\">\
+                    <div class=\"row\">\
+                        <div class=\"col-sm-6\">\
+                            <img>\
+                        </div>\
+                        <div class=\"col-sm-6\">\
+                            <h3 class=\"category-subtitle\"></h3>\
+                            <h4 class=\"slDesc\"></h4>\
+                        </div>\
+                    </div>\   
+                   </div>";
+var verticalDiv1 = "<div class=\"col-sm-6 verticalLine\">\
+                    <div class=\"row\">\
+                        <div class=\"col-sm-6\">\
+                            <img>\
+                        </div>\
+                        <div class=\"col-sm-6\">\
+                            <h3 class=\"category-subtitle\"></h3>\
+                            <h4 class=\"slDesc\"></h4>\
+                        </div>\
+                    </div>\  
+                   </div>" ;
+var noVerticalDiv2 = "<div class=\"col-sm-4\">\
+                       <div class=\"row\">\
+                        <div class=\"col-sm-6\">\
+                            <img>\
+                        </div>\
+                        <div class=\"col-sm-6\">\
+                            <h3 class=\"category-subtitle\"></h3>\
+                            <h4 class=\"slDesc\"></h4>\
+                        </div>\
+                    </div>\  
+                   </div>";
+var verticalDiv2 = "<div class=\"col-sm-4 verticalLine\">\
+                    <div class=\"row\">\
+                        <div class=\"col-sm-6\">\
+                            <img>\
+                        </div>\
+                        <div class=\"col-sm-6\">\
+                            <h3 class=\"category-subtitle\"></h3>\
+                            <h4 class=\"slDesc\"></h4>\
+                        </div>\
+                    </div>\  
+                   </div>" ;                    
+
 var hrDiv = "<hr id=\"SL-category-hr\">";
-var highlightButton = "<div class=\"row highButton\">\
-         <button class=\"button high\">Highlights</button>\
+var upButton = "<div class=\"row highButton\">\
+         <button class=\"button high\">Up to category Smart Life</button>\
       </div>"
 function ready(){
     
-    
+    /*modifica*/
     var type1 = $(".title-without-tab").html();
     $.ajax({
         method: "POST",

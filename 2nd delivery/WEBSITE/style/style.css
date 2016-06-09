@@ -685,3 +685,26 @@ Button to go to the highlights in AssistanceService page
     left:2%;
     position: relative;
 }
+
+/****************************************************************************************
+    SL TV AND ENTERITANMENT
+*****************************************************************************************/
+.description{
+    position: relative;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.topMarg{
+    margin-top: -40%;
+}
+
+.topImg{
+    width:100%;
+}
+
+.slDesc{
+    position:relative;
+    text-align: center;
+    vertical-align: middle;
+}
