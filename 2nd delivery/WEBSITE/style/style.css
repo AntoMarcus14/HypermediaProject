@@ -27,14 +27,23 @@
 /*********************************************
         HOME
 **********************************************/
-.homeButtonLeft{
+.homeButton{
     border: 1px solid black;
     margin-top: 5%;
     width: 98%;
     display: inline-block;
-    float: right;
     position: relative;
     border-radius: 10px;
+    background-color:#0b3d86;
+    float:right;
+}
+
+.right{
+    background-color: white;
+}
+
+.left{
+    float:left;
 }
 
 .homeButtonRight{
@@ -45,6 +54,7 @@
     float:left;
     position: relative;
     border-radius: 10px;
+    background-color:white;
 }
 
 #socialButton{
@@ -632,4 +642,35 @@ Button to go to the highlights in AssistanceService page
     width: 85.3%;
     padding-left: 1%;
     background-color:white
+}
+
+.descriptContainer{
+    border: 1px solid black;
+    margin-top: 5%;
+    display: inline-block;
+    position: relative;
+    border-radius: 10px;
+    left: 3.5%;
+    width:96%;
+}
+
+#detailTag{
+    position: absolute;
+    top: -5%;
+    left: 5%;
+    margin: 0 0 0 0;
+    background-color:white
+}
+
+.marginTable{
+    position: relative;
+    left: 2%;
+    width:96%;
+    border: 1px solid black;
+}
+
+.tableName{
+    color: #0b3d86;
+    left:2%;
+    position: relative;
 }
