@@ -1,0 +1,38 @@
+#filterPanelTitle{
+    text-align: center;
+    color: #0b3d86;
+}
+
+#filterPanel{
+    background-color: azure;
+    border: 1px solid black;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.element{
+    text-align: center;
+    display: inline-table;
+    margin-left: 4%;
+    margin-top: 4%;
+    border: 1px solid #333;
+    width: 280px;
+    height: 300px;
+}
+
+.devName{
+    color: #0b3d86;
+}
+
+.element>img{
+    margin-top: 1%;
+    width: 45%;
+}
+
+.element>ul{
+}
+
+.groupLinkInCat{
+    margin-top: 0;
+}
+
