@@ -705,8 +705,10 @@ Button to go to the highlights in AssistanceService page
     vertical-align: middle;
 }
 
-.lastImg{
+.img{
     margin-top: 5%;
+    float: left;
+    width:100%;
 }
 /*******************************************************************************************
 REQUEST INFO

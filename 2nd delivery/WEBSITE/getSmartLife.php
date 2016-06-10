@@ -9,7 +9,8 @@ if (mysqli_connect_errno()) { //verify connection
 else {
     # extract results mysqli_result::fetch_array
     $type = $_POST['type'];
-    $query = "SELECT Title, Image FROM slByCategory WHERE PageType = '$type' ";
+    
+    $query = "SELECT Title, Description, Image FROM slByCategory WHERE Category='$type' ";
     //query execution
     $result = mysqli_query($mysqli, $query);
     //if there are data available

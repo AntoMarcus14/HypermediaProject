@@ -3,7 +3,7 @@ $(document).ready(ready);
 var noVerticalDiv1 = "<div class=\"col-sm-6 \">\
                     <div class=\"row\">\
                         <div class=\"col-sm-6\">\
-                            <img  alt=\"Image not found\">\
+                            <img  class=\"category-images img\" alt=\"Image not found\">\
                         </div>\
                         <div class=\"col-sm-6\">\
                             <h3 class=\"category-subtitle\"></h3>\
@@ -14,7 +14,7 @@ var noVerticalDiv1 = "<div class=\"col-sm-6 \">\
 var verticalDiv1 = "<div class=\"col-sm-6 verticalLine\">\
                     <div class=\"row\">\
                         <div class=\"col-sm-6\">\
-                            <img  alt=\"Image not found\">\
+                            <img class=\"category-images img\" alt=\"Image not found\">\
                         </div>\
                         <div class=\"col-sm-6\">\
                             <h3 class=\"category-subtitle\"></h3>\
@@ -25,7 +25,7 @@ var verticalDiv1 = "<div class=\"col-sm-6 verticalLine\">\
 var noVerticalDiv2 = "<div class=\"col-sm-4 \">\
                     <div class=\"row\">\
                         <div class=\"col-sm-6\">\
-                            <img  alt=\"Image not found\">\
+                            <img class=\"category-images img\" alt=\"Image not found\">\
                         </div>\
                         <div class=\"col-sm-6\">\
                             <h3 class=\"category-subtitle\"></h3>\
@@ -36,7 +36,7 @@ var noVerticalDiv2 = "<div class=\"col-sm-4 \">\
 var verticalDiv2 = "<div class=\"col-sm-4 verticalLine\">\
                     <div class=\"row\">\
                         <div class=\"col-sm-6\">\
-                            <img  alt=\"Image not found\">\
+                            <img class=\"category-images img\" alt=\"Image not found\">\
                         </div>\
                         <div class=\"col-sm-6\">\
                             <h3 class=\"category-subtitle\"></h3>\
@@ -51,7 +51,12 @@ function ready(){
     var param = (window.location.search.replace("?","")).split("=");
     var catName = decodeURIComponent(param[1]);
     if(param.length>=2){
-    var type1 = $(".title-without-tab").html(catName);
+    $(".title-without-tab").html(catName);
+    if(catName=="TV & Entertainment" || catName=="Home & Family"){    
+        $(".topImg").attr("src","../img/"+catName.replace(" & ","__")+".png");
+    }else{
+        $(".topImg").attr("src","../img/"+catName.replace(/ /g,"_")+".png");
+    }
     $.ajax({
         method: "POST",
         //dataType: "json", //type of data
@@ -89,6 +94,9 @@ function ready(){
             $(".background-category").append(content);
             $(".category-subtitle").each(function(i,element){
                 $(element).html(category[i].Title);
+            })
+            $(".slDesc").each(function(i,element){
+                $(element).html(category[i].Description);
             })
             $(".category-images").each(function(i,element){
                 $(element).attr("src", category[i].Image);
