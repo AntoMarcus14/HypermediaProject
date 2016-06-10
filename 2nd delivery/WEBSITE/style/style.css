@@ -695,10 +695,6 @@ Button to go to the highlights in AssistanceService page
     margin-top: 10%;
 }
 
-.topMarg{
-    margin-top: -40%;
-}
-
 .topImg{
     width:100%;
 }
@@ -709,6 +705,9 @@ Button to go to the highlights in AssistanceService page
     vertical-align: middle;
 }
 
+.lastImg{
+    margin-top: 5%;
+}
 /*******************************************************************************************
 REQUEST INFO
 *******************************************************************************************/

@@ -1,54 +1,52 @@
 $(document).ready(ready);
 
-var noVerticalDiv1 = "<div class=\"col-sm-6\">\
+var noVerticalDiv1 = "<div class=\"col-sm-6 \">\
                     <div class=\"row\">\
                         <div class=\"col-sm-6\">\
-                            <img>\
+                            <img  alt=\"Image not found\">\
                         </div>\
                         <div class=\"col-sm-6\">\
                             <h3 class=\"category-subtitle\"></h3>\
-                            <h4 class=\"slDesc\"></h4>\
+                            <h4 class=\"slDesc\"><p></p></h4>\
                         </div>\
-                    </div>\   
-                   </div>";
+                    </div>\
+                    </div>" ;
 var verticalDiv1 = "<div class=\"col-sm-6 verticalLine\">\
                     <div class=\"row\">\
                         <div class=\"col-sm-6\">\
-                            <img>\
+                            <img  alt=\"Image not found\">\
                         </div>\
                         <div class=\"col-sm-6\">\
                             <h3 class=\"category-subtitle\"></h3>\
-                            <h4 class=\"slDesc\"></h4>\
+                            <h4 class=\"slDesc\"><p></p></h4>\
                         </div>\
-                    </div>\  
-                   </div>" ;
-var noVerticalDiv2 = "<div class=\"col-sm-4\">\
-                       <div class=\"row\">\
+                    </div>\
+                    </div>" ;
+var noVerticalDiv2 = "<div class=\"col-sm-4 \">\
+                    <div class=\"row\">\
                         <div class=\"col-sm-6\">\
-                            <img>\
+                            <img  alt=\"Image not found\">\
                         </div>\
                         <div class=\"col-sm-6\">\
                             <h3 class=\"category-subtitle\"></h3>\
-                            <h4 class=\"slDesc\"></h4>\
+                            <h4 class=\"slDesc\"><p></p></h4>\
                         </div>\
-                    </div>\  
-                   </div>";
+                    </div>\
+                    </div>" ;
 var verticalDiv2 = "<div class=\"col-sm-4 verticalLine\">\
                     <div class=\"row\">\
                         <div class=\"col-sm-6\">\
-                            <img>\
+                            <img  alt=\"Image not found\">\
                         </div>\
                         <div class=\"col-sm-6\">\
                             <h3 class=\"category-subtitle\"></h3>\
-                            <h4 class=\"slDesc\"></h4>\
+                            <h4 class=\"slDesc\"><p></p></h4>\
                         </div>\
-                    </div>\  
-                   </div>" ;                    
+                    </div>\
+                    </div>" ;                    
 
 var hrDiv = "<hr id=\"SL-category-hr\">";
-var upButton = "<div class=\"row highButton\">\
-         <button class=\"button high\">Up to category Smart Life</button>\
-      </div>"
+
 function ready(){
     
     /*modifica*/
@@ -57,7 +55,7 @@ function ready(){
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "../getCategory.php", //Relative or absolute path to file.php file
+        url: "../getSmartLife.php", //Relative or absolute path to file.php file
         data : {type : type1},
         success: function(response) {
             console.log(JSON.parse(response));
@@ -88,9 +86,6 @@ function ready(){
                 }
             }
             $(".background-category").append(content);
-            if(type1=="Assistance Services"){
-                $(".background-category").append(highlightButton);
-            }
             $(".category-subtitle").each(function(i,element){
                 $(element).html(category[i].Title);
             })
