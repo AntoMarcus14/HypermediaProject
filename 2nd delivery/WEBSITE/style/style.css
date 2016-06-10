@@ -708,3 +708,41 @@ Button to go to the highlights in AssistanceService page
     text-align: center;
     vertical-align: middle;
 }
+
+/*******************************************************************************************
+REQUEST INFO
+*******************************************************************************************/
+
+.request-info-table{
+    margin-left: 2%;
+    width: 96%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    text-align: left;    
+}
+
+#request-info-title-form{
+    padding-left: 1%;
+    color: #0b3d89;
+}
+
+.request-info-td{
+    padding: 1% 1% 1% 1%;
+}
+
+#input-send{
+    float: right;
+    color: #0b3d89;
+}
+
+.request-info-input{
+    background-color:#EEEEEE;
+}
+
+.input-text-form{
+    resize: none;
+}
+
+/*********************************************************************************************
+END OF REQUEST INFO
+*********************************************************************************************/
