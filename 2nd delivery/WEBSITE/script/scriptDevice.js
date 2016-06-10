@@ -19,18 +19,31 @@ $(document).ready(ready);
 
 function ready(){
     
-    $.ajax({
+    var params = (window.location.search.replace("?", "")).split("=");
+    var orientation = decodeURIComponent(params[1]);
+    if (params.length>=2) {
+        
+      var orientComp = orientation.split(" > ");
+      if(orientComp[0]=="Promotions") {
+          var deviceID = orientComp[1];
+      }
+      else{
+          var deviceID = orientComp[2];
+      }
+      
+      $.ajax({
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
         url: "../getDevice.php", //Relative or absolute path to file.php file
-        //data: {device:id},
+        data: {device: deviceID},
         success: function(response) {
             console.log(JSON.parse(response));
             var devices=JSON.parse(response);               
             
+            $("#orientation").html(addTag(orientation));
             $(".device-name").html(devices[0].Name);
-            $(".description").html(devices[0].Description);
+            $(".devDescription").html(devices[0].Description);
             var price=devices[0].FullPrice.replace("euro","€");
             $(".fullPrice" + ">h3").html(price + " €");
             $(".monthPrice").html(devices[0].MonthPrice.replace("euro","€"));
@@ -66,9 +79,9 @@ function ready(){
         {
             console.log("Error");
         }
-    });
+      });
     
-    
+    }
     $("#1devicePic").click(function(){
         $("#mainDeviceImg").fadeOut( "fast", function(){
             $("#mainDeviceImg").attr("src",$("#1devicePic").attr("src")).fadeIn();
@@ -86,4 +99,5 @@ function ready(){
             $("#mainDeviceImg").attr("src",$("#3devicePic").attr("src")).fadeIn();
         });
     });
+        
 }
