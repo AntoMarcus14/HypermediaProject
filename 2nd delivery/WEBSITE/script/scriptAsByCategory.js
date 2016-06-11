@@ -105,14 +105,15 @@ function ready(){
             
             $(".assistance-category-subtitle").each(function(i,element){
                 $(element).html(assistances[i].SubCategory);
-            })
+            });
             $("#name-of-assistance").each(function(i,element){
                 $(element).html(assistances[i].Name);
-            })
+            });
         },
         error: function(request,error) 
         {
             console.log("Error");
         } 
     });
+    }
 }
