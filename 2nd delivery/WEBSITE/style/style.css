@@ -748,3 +748,23 @@ REQUEST INFO
 /*********************************************************************************************
 END OF REQUEST INFO
 *********************************************************************************************/
+
+/*********************************************************************************************
+ASSISTANCE BY CATEGORY
+*********************************************************************************************/
+
+.assistance-by-format{
+    text-align: center;
+}
+
+.assistance-category-subtitle{
+    color: black;
+}
+
+#filter-panel-title{
+    color: #0b3d89;
+}
+
+.assistance-image-background{
+    background-image: url(../img/Tim%20vision%20image.jpg);
+}
