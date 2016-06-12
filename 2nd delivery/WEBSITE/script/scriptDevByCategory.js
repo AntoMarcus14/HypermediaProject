@@ -1,10 +1,61 @@
 $(document).ready(ready);
 
+Object.size = function(obj) {
+    var size = 0, key;
+    for (key in obj) {
+        if (obj.hasOwnProperty(key)) size++;
+    }
+    return size;
+};
+
 var elementDiv = "<div class=\"element\">\
                         <a href=\"#\"><img alt=\"device img\">\
                         <h4 class=\"devName\"></h4></a>\
                         <h4 class=\"price\">€</h4>\
                     </div>";
+
+var panelHeading1 = "<div class=\"panel-heading \" >\
+						      <h4 class=\"panel-title\">\
+							     <a data-toggle=\"collapse\" ";
+var panelCollapseBegin = "\" class=\"panel-collapse collapse in\">\
+						<ul class=\"list-group\">";
+
+var listItemBegin = "<li class=\"list-group-item\">\
+								<div class=\"checkbox\">\
+									<label>\
+										<input type=\"checkbox\" value=\"1\" name='";
+				   
+
+function toggleChevron(e) {
+		$(e.target)
+				.prev('.panel-heading')
+				.find("i.indicator")
+				.toggleClass('fa-caret-down fa-caret-right');
+}
+
+function createFilterPanel(filter){
+    
+    delete filter["CategoryPage"];
+    var filterContent = "";
+    var i = 0;
+    for(var index in filter) {
+        if(i%2==0){
+            filterContent = filterContent + panelHeading1 + "href = \"#collapse" + i/2 + "\"><i class=\"indicator fa fa-caret-down\" aria-hidden=\"true\"></i>" +
+                filter[index] + "</a></h4></div>";
+        }
+        else{
+            filterContent = filterContent + "<div id=\"collapse" + (i-1)/2 + panelCollapseBegin;
+            var items = filter[index].split("_");
+            for(var j=0; j<items.length; j++){
+                            filterContent = filterContent + listItemBegin + filter[index] + "'>"+ items[j] + "</label></div></li>";
+                        }
+            filterContent = filterContent + "</ul></div>";
+        }
+        i++;
+    }
+    $(".panel-body").html(filterContent);
+    $('label:contains("All")').find("input").prop("checked", true);
+}
 
 function ready(){
     
@@ -25,8 +76,11 @@ function ready(){
             var devices=JSON.parse(response); 
             
             $("#orientation").append("<u>" + catName + "</u>");
+            
+            createFilterPanel(devices[devices.length-1]);
+    
             var content="";
-            for(i=0; i<devices.length; i++) {
+            for(i=0; i<devices.length-1; i++) {
                 content = content + elementDiv;
             }
             $(".categoryContent").html(content);
@@ -34,7 +88,7 @@ function ready(){
             $(".element").each(function(i,el){
                         $(el).find("img").attr("src", devices[i].Image1);
                         $(el).find(".devName").html(devices[i].Name);
-                        $(el).find(".price").prepend(devices[i].FullPrice);
+                        $(el).find(".price").prepend(devices[i].FullPrice.replace("euro","€"));
                         if(devices[i].Description!=""){
                             $(el).find("a").attr("href","device.html?dev=" + $("#orientation").text() + " > " + devices[i].Name);
                         }
@@ -56,4 +110,22 @@ function ready(){
     });
     
     }
+    
+    $('#filterPanel').on('hidden.bs.collapse', toggleChevron);
+	$('#filterPanel').on('shown.bs.collapse', toggleChevron);
+    $(document).on("click", "input:checkbox", function() {
+        var $box = $(this);
+        if ($box.is(":checked")) {
+            console.log($box.attr("name"));
+            // the name of the box is retrieved using the .attr() method
+            // as it is assumed and expected to be immutable
+            var group = "input:checkbox[name='" + $box.attr("name") + "']";
+            // the checked state of the group/box on the other hand will change
+            // and the current value is retrieved using .prop() method
+            $(group).prop("checked", false);
+            $box.prop("checked", true);
+        } else {
+            $box.prop("checked", false);
+        }
+    });
 }
