@@ -24,6 +24,7 @@ function ready(){
             console.log(JSON.parse(response));
             var devices=JSON.parse(response); 
             
+            $("#orientation").append("<u>" + catName + "</u>");
             var content="";
             for(i=0; i<devices.length; i++) {
                 content = content + elementDiv;

@@ -63,11 +63,16 @@ function ready(){
                 $("#3devicePic").attr("src",devices[0].Image3);
             }
             
-            $(".slList").html(devices[0].SLServices);
+            var items = devices[0].SLServices.split("_");
+            var list="";
+            for(var j=0; j<items.length; j++){
+                    list = list + "<h4><li><a href=\"#\">" + items[j] + "</a></li></h4>";
+            }
+            $(".slList").html(list);
             var tab="";
             var i=0;
             for(var index in devices[0]) {
-                if (devices[0].hasOwnProperty(index)&&i>=11&&devices[0][index]!=null) {
+                if (devices[0].hasOwnProperty(index)&&i>=12&&devices[0][index]!=null) {
                     tab=tab+"<tr><td>" + index + "</td><td>" + devices[0][index] + "</td></tr> ";
                 }
                 i++;
