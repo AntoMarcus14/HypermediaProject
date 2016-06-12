@@ -107,17 +107,18 @@ function ready(){
             content=content+"</div>";
             
             $(".background-category").append(content);
-            /*
+            
+            var temp = [assistances[0].SubCategory];
             subcat=assistances[0].SubCategory;
             for(i=1; i<assistances.length; i++){
                 if(subcat!=assistances[i].SubCategory){
-                    assistances[i-1].SubCategory=assistances[i].SubCategory;
+                    temp.push(assistances[i].SubCategory);
                     subcat = assistances[i].SubCategory;
                 }
             }
-            */
+            
             $(".assistance-category-subtitle").each(function(i,element){
-                $(element).html(assistances[i].SubCategory);
+                $(element).html(temp[i]);
             });
             
             $(".name-of-assistance").each(function(i,element){
