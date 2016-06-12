@@ -1,6 +1,6 @@
 <?php
 
-$mySqli = mysqli_connect("localhost", "root", "", "my_tim3m");
+$mysqli = mysqli_connect("localhost", "root", "", "my_tim3m");
 
 if (mysqli_connect_errno()) { //verify connection
     echo "Error to connect to DBMS: ".mysqli_connect_error(); //notify error

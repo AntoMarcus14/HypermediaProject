@@ -1,4 +1,4 @@
-$(document).ready;
+$(document).ready(ready);
 
 var noVerticalDiv = "<div class=\"col-sm-6\">\
                             <h3 class=\"assistance-category-subtitle\"></h3>\
@@ -42,7 +42,7 @@ function ready(){
 
     $(".title-without-tab").html(assisType);
     
-    $ajax({
+    $.ajax({
         method: "POST",
         crossDomain: true,
         url: "../getAsByCat.php",
