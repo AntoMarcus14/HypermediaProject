@@ -759,6 +759,7 @@ ASSISTANCE BY CATEGORY
 
 .assistance-category-subtitle{
     color: black;
+    padding-bottom: 3%;
 }
 
 #filter-panel-title{
@@ -766,8 +767,10 @@ ASSISTANCE BY CATEGORY
 }
 
 .assistance-image-background{
-    background-image: url(../img/Tim%20vision%20image.jpg);
+    background-image: url(../img/Tim-vision-image.jpg);
 }
 
-#name-of-assistance{}
+.name-of-assistance{
+    padding-bottom: 2%;
+}
 
