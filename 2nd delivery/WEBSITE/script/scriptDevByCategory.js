@@ -1,12 +1,5 @@
 $(document).ready(ready);
 
-Object.size = function(obj) {
-    var size = 0, key;
-    for (key in obj) {
-        if (obj.hasOwnProperty(key)) size++;
-    }
-    return size;
-};
 
 var elementDiv = "<div class=\"element\">\
                         <a href=\"#\"><img alt=\"device img\">\
@@ -14,17 +7,6 @@ var elementDiv = "<div class=\"element\">\
                         <h4 class=\"price\"> €</h4>\
                     </div>";
 
-var panelHeading1 = "<div class=\"panel-heading \" >\
-						      <h4 class=\"panel-title\">\
-							     <a data-toggle=\"collapse\" ";
-var panelCollapseBegin = "\" class=\"panel-collapse collapse in\">\
-						<ul class=\"list-group\">";
-
-var listItemBegin = "<li class=\"list-group-item\">\
-								<div class=\"checkbox\">\
-									<label>\
-										<input type=\"checkbox\" value=\"1\" name='";
-				   
 var activeFilters = ["All"];
 
 function toggleChevron(e) {
@@ -34,30 +16,6 @@ function toggleChevron(e) {
 				.toggleClass('fa-caret-down fa-caret-right');
 }
 
-function createFilterPanel(filter){
-    
-    delete filter["CategoryPage"];
-    var filterContent = "";
-    var i = 0;
-    for(var index in filter) {
-        if(i%2==0 && filter[index]!=null){
-            filterContent = filterContent + panelHeading1 + "href = \"#collapse" + i/2 + "\"><i class=\"indicator fa fa-caret-down\" aria-hidden=\"true\"></i>" +
-                filter[index] + "</a></h4></div>";
-        }
-        else if(filter[index]!=null){
-            
-            filterContent = filterContent + "<div id=\"collapse" + (i-1)/2 + panelCollapseBegin;
-            var items = filter[index].split("_");
-            for(var j=0; j<items.length; j++){
-                            filterContent = filterContent + listItemBegin + filter[index] + "'>"+ items[j] + "</label></div></li>";
-                        }
-            filterContent = filterContent + "</ul></div>";
-        }
-        i++;
-    }
-    $(".panel-body").html(filterContent);
-    $('label:contains("All")').find("input").prop("checked", true);
-}
 
 function ready(){
     
