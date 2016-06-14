@@ -11,7 +11,7 @@ else {
     $category = $_POST['category'];
 
     # extract results mysqli_result::fetch_array
-    $query = " SELECT Name, ShortDesc, Description, FullPrice, Image1 FROM device WHERE Category = '$category' ";
+    $query = " SELECT Name, ShortDesc, Description, FullPrice, Image1, Tags FROM device WHERE Category = '$category' ";
     $query2 = " SELECT * FROM filterPanel WHERE CategoryPage = '$category' ";
     //query execution
     $result = mysqli_query($mysqli, $query);

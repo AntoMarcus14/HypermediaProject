@@ -11,7 +11,7 @@ Object.size = function(obj) {
 var elementDiv = "<div class=\"element\">\
                         <a href=\"#\"><img alt=\"device img\">\
                         <h4 class=\"devName\"></h4></a>\
-                        <h4 class=\"price\">€</h4>\
+                        <h4 class=\"price\"> €</h4>\
                     </div>";
 
 var panelHeading1 = "<div class=\"panel-heading \" >\
@@ -25,6 +25,7 @@ var listItemBegin = "<li class=\"list-group-item\">\
 									<label>\
 										<input type=\"checkbox\" value=\"1\" name='";
 				   
+var activeFilters = ["All"];
 
 function toggleChevron(e) {
 		$(e.target)
@@ -39,11 +40,12 @@ function createFilterPanel(filter){
     var filterContent = "";
     var i = 0;
     for(var index in filter) {
-        if(i%2==0){
+        if(i%2==0 && filter[index]!=null){
             filterContent = filterContent + panelHeading1 + "href = \"#collapse" + i/2 + "\"><i class=\"indicator fa fa-caret-down\" aria-hidden=\"true\"></i>" +
                 filter[index] + "</a></h4></div>";
         }
-        else{
+        else if(filter[index]!=null){
+            
             filterContent = filterContent + "<div id=\"collapse" + (i-1)/2 + panelCollapseBegin;
             var items = filter[index].split("_");
             for(var j=0; j<items.length; j++){
@@ -86,6 +88,7 @@ function ready(){
             $(".categoryContent").html(content);
             
             $(".element").each(function(i,el){
+                        $(el).attr("title", devices[i].Tags);
                         $(el).find("img").attr("src", devices[i].Image1);
                         $(el).find(".devName").html(devices[i].Name);
                         $(el).find(".price").prepend(devices[i].FullPrice.replace("euro","€"));
@@ -116,16 +119,53 @@ function ready(){
     $(document).on("click", "input:checkbox", function() {
         var $box = $(this);
         if ($box.is(":checked")) {
-            console.log($box.attr("name"));
+            //console.log($box.attr("name"));
             // the name of the box is retrieved using the .attr() method
             // as it is assumed and expected to be immutable
             var group = "input:checkbox[name='" + $box.attr("name") + "']";
             // the checked state of the group/box on the other hand will change
             // and the current value is retrieved using .prop() method
             $(group).prop("checked", false);
+            $(group).each(function(i, el){
+                    var active = $(el).parent().text().trim();
+                    var index = activeFilters.indexOf(active);
+                    if (index > -1 && active!="All") {
+                        activeFilters.splice(index,1);
+                    }
+            });
             $box.prop("checked", true);
+            var active = $box.parent().text().trim();
+            if(active!="All"){
+                activeFilters.push(active);
+            }
+            
+            $(".element").show();
+            //console.log($box.parent().text().trim());
+            $(".element").each(function(i, el){
+                    for(var j=0; j<activeFilters.length; j++){
+                        if(!$(el).attr("title").includes(activeFilters[j])){
+                            $(el).hide();
+                        }
+                    }
+            });
         } else {
+            var active = $box.parent().text().trim();
+            var index = activeFilters.indexOf(active);
+            if (index > -1 && active!="All") {
+                activeFilters.splice(index,1);
+            }
             $box.prop("checked", false);
+            $(".element").show();
+            //console.log($box.parent().text().trim());
+            $(".element").each(function(i, el){
+                    for(var j=0; j<activeFilters.length; j++){
+                        if(!$(el).attr("title").includes(activeFilters[j])){
+                            $(el).hide();
+                        }
+                    }
+            });
         }
+        console.log(activeFilters);
     });
+    
 }
