@@ -22,13 +22,18 @@ var nextPanel="<div class=\"panel panel-default\">\
                 </div>";
 
 function ready(){
-    
-  $.ajax({
+        
+    var params = (window.location.search.replace("?", "")).split("=");
+    var orientation = decodeURIComponent(params[1]);
+    if (params.length>=2) {
+        var orientComp = orientation.split(" > ");
+        var id = orientComp[orientComp.length-1];
+        $.ajax({
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
         url: "../getAS.php", //Relative or absolute path to file.php file
-        //data: {device:id},
+        data: {assistance:id},
         success: function(response) {
             console.log(JSON.parse(response));
             var aService=JSON.parse(response);               
@@ -36,6 +41,8 @@ function ready(){
             $(".title-with-tab").html(aService[0].Name);
             $(".asDescription").html(aService[0].Description);
             $(".asImage").attr("src", aService[0].Image);
+            
+            $("#orientation").html(addTag(orientation));
             
             if(aService[0].hasOwnProperty('Question') && aService[0].Question!=null){
                 var faqContent=firstPanel;
@@ -55,13 +62,14 @@ function ready(){
                 $("#faqTab").hide();
             }
             console.log("finished2");
+            $(".btn-group").find("a").attr("href","assistance-by-category.html?ass=" + orientComp[orientComp.length-2]);
         },
         error: function(request,error) 
         {
             console.log("Error");
         }
-    });  
-
+    });
+    }
    
 
   $(document).on("hide.bs.collapse", ".panel-collapse", function(){

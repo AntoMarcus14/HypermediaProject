@@ -1,20 +1,28 @@
 $(document).ready(ready);
-var noVerticalDiv1 = "<div class=\"col-sm-6 image-container\">\
+var noVerticalDiv1 = "<a>\
+                    <div class=\"col-sm-6 image-container\">\
                     <h3 class=\"category-subtitle\"></h3>\
                     <img class=\"category-images\">\
-                </div>";
-var verticalDiv1 = "<div class=\"col-sm-6 verticalLine image-container\">\
+                    </div>\
+                    </a>";
+var verticalDiv1 = "<a>\
+                    <div class=\"col-sm-6 verticalLine image-container\">\
                     <h3 class=\"category-subtitle\"></h3>\
                     <img class=\"category-images\">\
-                </div>" ;
-var noVerticalDiv2 = "<div class=\"col-sm-4 image-container\">\
+                    </div>\
+                </a>" ;
+var noVerticalDiv2 = "<a>\
+                    <div class=\"col-sm-4 image-container\">\
                     <h3 class=\"category-subtitle\"></h3>\
                     <img class=\"category-images\">\
-                </div>";
-var verticalDiv2 = "<div class=\"col-sm-4 verticalLine image-container\">\
+                    </div>\
+                </a>";
+var verticalDiv2 = "<a>\
+                    <div class=\"col-sm-4 verticalLine image-container\">\
                     <h3 class=\"category-subtitle\"></h3>\
                     <img class=\"category-images\">\
-                </div>" ;
+                    </div>\
+                </a>" ;
 var hrDiv = "<hr id=\"SL-category-hr\">";
 var highlightButton = "<div class=\"row highButton\">\
          <button class=\"button high\">Highlights</button>\
@@ -63,6 +71,7 @@ function ready(){
             }
             $(".category-subtitle").each(function(i,element){
                 $(element).html(category[i].Title);
+                $(element).parent().parent().attr("href","assistance-by-category.html?ass=" + category[i].Title);
             })
             $(".category-images").each(function(i,element){
                 $(element).attr("src", category[i].Image);

@@ -768,6 +768,10 @@ ASSISTANCE BY CATEGORY
 
 .assistance-image-background{
     background-image: url(../img/Tim-vision-image.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom; 
+    
 }
 
 .name-of-assistance{

@@ -8,8 +8,8 @@ if (mysqli_connect_errno()) { //verify connection
 }
 else {
     # extract results mysqli_result::fetch_array
-    //$type = $_POST['type'];
-    $query = "SELECT * FROM assistanceService LEFT JOIN asFAQ ON assistanceService.Name = asFAQ.Service WHERE assistanceService.Name ='Connect to internet with the mobile phone'";
+    $assistance = $_POST['assistance'];
+    $query = "SELECT * FROM assistanceService LEFT JOIN asFAQ ON assistanceService.Name = asFAQ.Service WHERE assistanceService.Name ='$assistance' ";
     //query execution
     $result = mysqli_query($mysqli, $query);
     //if there are data available

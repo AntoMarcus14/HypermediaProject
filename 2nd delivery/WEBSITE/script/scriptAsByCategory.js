@@ -29,6 +29,7 @@ var noVerticalDiv2="<div class=\"col-sm-12 assistance-by-format\">\
                             <a><u><h4 class=\"name-of-assistance\"></h4></u></a>\
                             <a><u><h4 class=\"name-of-assistance\"></h4></u></a>\
                             <a><u><h4 class=\"name-of-assistance\"></h4></u></a>\
+                            <br>\
                         </div>";
 
 var hrDiv = "<hr id=\"SL-category-hr\">";
@@ -51,6 +52,7 @@ function ready(){
             console.log(JSON.parse(response));
             var assistances =JSON.parse(response);//è un array di array associativo (primo indice: numero riga, secondo indice: nome attributo) 
             var content="";
+            $("#orientation").append("<u>" + assisType + "</u>");
             var subcat = assistances[0].SubCategory;
             var bol=0;//flag: 0 se la pagina non ha il filterpanel, cioè ha solo una subCategory
             for(var i=0; i<assistances.length; i++){
@@ -122,8 +124,14 @@ function ready(){
             });
             
             $(".name-of-assistance").each(function(i,element){
+                if(assistances[i].Description!=""){
+                    $(element).parent().parent().attr("href","assistance-service.html?ass=" + $("#orientation").text() + " > " + assistances[i].Name);
+                } else {
+                    $(element).parent().parent().attr("style", "color:lightsteelblue");
+                }
                 $(element).html(assistances[i].Name);
             });
+            $(".btn-group").find("a").attr("href","assistance-category.html");
         },
         error: function(request,error) 
         {
@@ -131,4 +139,6 @@ function ready(){
         } 
     });
     }
+    
+    
 }
