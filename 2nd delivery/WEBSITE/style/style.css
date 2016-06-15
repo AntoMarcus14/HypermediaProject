@@ -893,3 +893,24 @@ ASSISTANCE BY CATEGORY
     margin-left: 5%;
     padding: 0 2px;
 }
+
+.promElement>div>img{
+    width: 50%;
+    display: inline-block;
+}
+
+.promElement>div>a{
+    display: inline-block;
+    font-size: 17px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.promName{
+    text-align: center;
+    color: #fe000b;
+}
+
+.promText{
+    text-align: center;
+}
