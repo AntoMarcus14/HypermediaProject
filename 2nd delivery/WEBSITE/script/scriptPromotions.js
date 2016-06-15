@@ -19,6 +19,13 @@ var verticalDiv = "<div class=\"col-sm-4 promElement verticalLine\">\
                         </div>";
 var hrDiv = "<hr id=\"SL-category-hr\">";
 
+function toggleChevron(e) {
+		$(e.target)
+				.prev('.panel-heading')
+				.find("i.indicator")
+				.toggleClass('fa-caret-down fa-caret-right');
+}
+
 function ready(){
     
     $.ajax({
@@ -26,9 +33,13 @@ function ready(){
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
         url: "../getPromotions.php", //Relative or absolute path to file.php file
+        data: {category: "Promotions"},
         success: function(response) {
             console.log(JSON.parse(response));
             var promotions=JSON.parse(response);
+            var filterPanel = promotions[promotions.length - 1];
+            promotions.splice(promotions.length -1,1);
+            console.log(filterPanel);
             var numDevices = 0;
             var numSl = 0;
             for(var i=0; i<promotions.length; i++){
@@ -63,7 +74,7 @@ function ready(){
                 i++;
             }
             content = content + "</div>";
-            $(".deviceRow").html(content);
+            $(".deviceRow").append(content);
             //fill sl row
             content="";
             i=0;
@@ -86,23 +97,83 @@ function ready(){
                 i++;
             }
             content = content + "</div>";
-            $(".slRow").html(content);
+            $(".slRow").append(content);
             $(".promElement").each(function(i,element){
                 $(element).find("img").attr("src",promotions[i].Image);
                 $(element).find(".promName").html(promotions[i].Name);
-                $(element).find(".promText").html(promotions[i].PromText);
-                if(promotions[i].Active) {
-                    $(element).find("a").attr("href", "device.html?dev=Promotions > " + promotions[i].Name);
+                $(element).find(".promText").html(promotions[i].PromText.replace(/euro/g ,"€"));
+                if(promotions[i].Active==1) {
+                    if(promotions[i].Type=="Devices"){
+                        $(element).find("a").attr("href", "device.html?dev=Promotions > " + promotions[i].Name);
+                    }
+                    else {
+                        $(element).find("a").attr("href", "SL-Service.html?sl=Promotions > " + promotions[i].Name);
+                    }
                 }
                 else{
-                    $(element).parent().parent().attr("style", "color:lightsteelblue");
+                    $(element).find("a").attr("style", "color:lightsteelblue");
                 }
             });
+            createFilterPanel(filterPanel);
             
         },
         error: function(request,error) 
         {
             console.log("Error");
+        }
+    });
+    
+    
+    $('#filterPanel').on('hidden.bs.collapse', toggleChevron);
+	$('#filterPanel').on('shown.bs.collapse', toggleChevron);
+    $(document).on("click", "input:checkbox", function() {
+        var $box = $(this);
+        if ($box.is(":checked")) {
+            //console.log($box.attr("name"));
+            // the name of the box is retrieved using the .attr() method
+            // as it is assumed and expected to be immutable
+            var group = "input:checkbox[name='" + $box.attr("name") + "']";
+            // the checked state of the group/box on the other hand will change
+            // and the current value is retrieved using .prop() method
+            $(group).prop("checked", false);
+            $(group).each(function(i, el){
+                    var active = $(el).parent().text().trim();
+                    var index = activeFilters.indexOf(active);
+                    if (index > -1 && active!="All") {
+                        activeFilters.splice(index,1);
+                    }
+            });
+            $box.prop("checked", true);
+            var active = $box.parent().text().trim();
+            if(active!="All"){
+                activeFilters.push(active);
+            }
+            
+            $(".element").show();
+            //console.log($box.parent().text().trim());
+            $(".element").each(function(i, el){
+                    for(var j=0; j<activeFilters.length; j++){
+                        if(!$(el).attr("title").includes(activeFilters[j])){
+                            $(el).hide();
+                        }
+                    }
+            });
+        } else {
+            var active = $box.parent().text().trim();
+            var index = activeFilters.indexOf(active);
+            if (index > -1 && active!="All") {
+                activeFilters.splice(index,1);
+            }
+            $box.prop("checked", false);
+            $(".element").show();
+            //console.log($box.parent().text().trim());
+            $(".element").each(function(i, el){
+                    for(var j=0; j<activeFilters.length; j++){
+                        if(!$(el).attr("title").includes(activeFilters[j])){
+                            $(el).hide();
+                        }
+                    }
+            });
         }
     });
 }
