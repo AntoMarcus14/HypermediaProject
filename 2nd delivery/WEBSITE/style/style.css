@@ -788,10 +788,6 @@ ASSISTANCE BY CATEGORY
     padding-bottom: 3%;
 }
 
-#filter-panel-title{
-    color: #0b3d89;
-}
-
 .assistance-image-background{
     background-image: url(../img/Tim-vision-image.jpg);
     background-size: 100%;
@@ -803,6 +799,9 @@ ASSISTANCE BY CATEGORY
 .name-of-assistance{
     padding-bottom: 2%;
 }
+
+.div-filt{}
+.vertLin{}
 
 /*********************************************************************************************
         Filter panel and devices by category

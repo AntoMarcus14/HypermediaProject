@@ -8,7 +8,7 @@ if (mysqli_connect_errno()) { //verify connection
 }
 else {
     $assistanceType = $_POST['assistanceType'];
-    $query = "SELECT Name, SubCategory, Description FROM assistanceService WHERE Category = '$assistanceType' ORDER BY SubCategory ";
+    $query = "SELECT Name, SubCategory, Description, Tags FROM assistanceService WHERE Category = '$assistanceType' ORDER BY SubCategory ";
     $query2 = " SELECT * FROM filterPanel WHERE CategoryPage = '$assistanceType' ";
     $result = mysqli_query($mysqli, $query);
     $result2 = mysqli_query($mysqli, $query2);

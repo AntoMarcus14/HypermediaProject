@@ -1,20 +1,20 @@
 $(document).ready(ready);
 
-var noVerticalDiv = "<div class=\"col-sm-6\">\
+var noVerticalDiv = "<div class=\"col-sm-6 div-filt\">\
                             <h3 class=\"assistance-category-subtitle\"></h3>\
                             <a><u><h4 class=\"name-of-assistance\"></h4></u></a>\
                             <a><u><h4 class=\"name-of-assistance\"></h4></u></a>\
                             <a><u><h4 class=\"name-of-assistance\"></h4></u></a>\
                         </div>";
 
-var verticalDiv="<div class=\"col-sm-6 verticalLine\">\
+var verticalDiv="<div class=\"col-sm-6 verticalLine div-filt vertLin\">\
                             <h3 class=\"assistance-category-subtitle\"></h3>\
                             <a><u><h4 class=\"name-of-assistance\"></h4></u></a>\
                             <a><u><h4 class=\"name-of-assistance\"></h4></u></a>\
                             <a><u><h4 class=\"name-of-assistance\"></h4></u></a>\
                         </div>";
 
-var noVerticalDiv1="<div class=\"col-sm-12\">\
+var noVerticalDiv1="<div class=\"col-sm-12 div-filt\">\
                             <h3 class=\"assistance-category-subtitle\"></h3>\
                             <a><u><h4 class=\"name-of-assistance\"></h4></u></a>\
                             <a><u><h4 class=\"name-of-assistance\"></h4></u></a>\
@@ -62,13 +62,10 @@ function ready(){
             var assistances =JSON.parse(response);//è un array di array associativo (primo indice: numero riga, secondo indice: nome attributo) 
             var content="";
             $("#orientation").append("<u>" + assisType + "</u>");
-            var lastAsRow = assistances.pop();
-            
-            createFilterPanel(lastAsRow);
             
             var subcat = assistances[0].SubCategory;
             var bol=0;//flag: 0 se la pagina non ha il filterpanel, cioè ha solo una subCategory
-            for(var i=0; i<assistances.length; i++){
+            for(var i=0; i<assistances.length-1; i++){
                 if(subcat!=assistances[i].SubCategory){
                     bol=1;
                 }
@@ -76,15 +73,17 @@ function ready(){
             if(bol==1){
                 content=content+"<div class=\"row\">\
                 <div class=\"col-sm-2\">\
-                    <div class=\"row assistance-by-format\">\
-                    <h3 id=\"filter-panel-title\">Filter Panel</h3>\
+                    <h3 id=\"filterPanelTitle\">Filter Panel</h3>\
+                    <div id=\"filterPanel\" class=\"panel panel-primary behclick-panel\">\
+				            <div class=\"panel-body\">\
+					       </div>\
                     </div>\
                 </div>\
                 <div class=\"col-sm-10 assistance-by-format\">";
                 //premessa: la query deve ritornare un elenco di row che siano ordinate in base alle subcategory, e non distribuite casualmente
                 //in modo che quando vengono contate le diverse subcategory non ci siano ripetizioni
                 var count=1;
-                for(i=1; i<assistances.length; i++){
+                for(i=1; i<assistances.length-1; i++){
                     if(subcat!=assistances[i].SubCategory){
                         subcat=assistances[i].SubCategory;
                         count++;
@@ -122,12 +121,16 @@ function ready(){
             content=content+"</div>";
             
             $(".background-category").append(content);
-            
+            if(bol==1){
+                createFilterPanel(assistances[assistances.length-1]); //crera il filtro solo dov'è necessario che ci sia
+            }
             var temp = [assistances[0].SubCategory];
+            var titleName = [assistances[0].Tags];
             subcat=assistances[0].SubCategory;
-            for(i=1; i<assistances.length; i++){
+            for(i=1; i<assistances.length-1; i++){
                 if(subcat!=assistances[i].SubCategory){
                     temp.push(assistances[i].SubCategory);
+                    titleName.push(assistances[i].Tags);
                     subcat = assistances[i].SubCategory;
                 }
             }
@@ -135,6 +138,12 @@ function ready(){
             $(".assistance-category-subtitle").each(function(i,element){
                 $(element).html(temp[i]);
             });
+            
+            console.log(assistances);
+            
+            $(".div-filt").each(function(i,element){
+                $(element).attr("title", titleName[i]);
+            })
             
             $(".name-of-assistance").each(function(i,element){
                 if(assistances[i].Description!=""){
@@ -152,6 +161,72 @@ function ready(){
         } 
     });
     }
-    
+    $('#filterPanel').on('hidden.bs.collapse', toggleChevron);
+	$('#filterPanel').on('shown.bs.collapse', toggleChevron);
+    $(document).on("click", "input:checkbox", function() {
+        var $box = $(this);
+        if ($box.is(":checked")) {
+            //console.log($box.attr("name"));
+            // the name of the box is retrieved using the .attr() method
+            // as it is assumed and expected to be immutable
+            var group = "input:checkbox[name='" + $box.attr("name") + "']";
+            // the checked state of the group/box on the other hand will change
+            // and the current value is retrieved using .prop() method
+            $(group).prop("checked", false);
+            $(group).each(function(i, el){
+                    var active = $(el).parent().text().trim();
+                    var index = activeFilters.indexOf(active);
+                    if (index > -1 && active!="All") {
+                        activeFilters.splice(index,1);
+                    }
+            });
+            $box.prop("checked", true);
+            var active = $box.parent().text().trim();
+            if(active!="All"){
+                activeFilters.push(active);
+            }
+            
+            $(".div-filt").show();
+            $(".SL-category-hr").show();
+            //console.log($box.parent().text().trim());
+            $(".div-filt").each(function(i, el){
+                    for(var j=0; j<activeFilters.length; j++){
+                        if(!$(el).attr("title").includes(activeFilters[j])){
+                            $(el).hide();
+                        }
+                    }
+                
+            });
+            if(active!="All"){
+                $("hr").each(function(i,element){
+                    $(element).hide();
+                });
+                $(".verticalLine").removeClass("verticalLine");
+            }
+        } else {
+            var active = $box.parent().text().trim();
+            var index = activeFilters.indexOf(active);
+            if (index > -1 && active!="All") {
+                activeFilters.splice(index,1);
+            }
+            $box.prop("checked", false);
+            $(".div-filt").show();
+            //console.log($box.parent().text().trim());
+            $(".div-filt").each(function(i, el){
+                    for(var j=0; j<activeFilters.length; j++){
+                        if(!$(el).attr("title").includes(activeFilters[j])){
+                            $(el).hide();
+                        }
+                    }
+            });
+            $("hr").each(function(i,element){
+                $(element).show();
+            });
+            $(".vertLin").each(function(i,element){
+                $(element).addClass("verticalLine")
+            });
+        }
+        console.log(activeFilters);
+    });
     
 }
