@@ -39,12 +39,17 @@ function ready(){
                     numSl++;
                 }
             }
+            console.log(numDevices);
+            console.log(numSl);
             //fill devices row
             var content="";
             var i=0;
             var j=0;
             while(i < numDevices){
                 if(j==0){
+                    if(i!=0) {
+                        content = content + "</div>" + hrDiv;
+                    }
                     content=content+"<div class=\"row\">";
                     content = content + noVerticalDiv;
                     j++;
@@ -57,13 +62,17 @@ function ready(){
                 }
                 i++;
             }
+            content = content + "</div>";
             $(".deviceRow").html(content);
             //fill sl row
             content="";
-            var i=0;
-            var j=0;
+            i=0;
+            j=0;
             while(i < numSl){
                 if(j==0){
+                    if(i!=0) {
+                        content = content + "</div>" + hrDiv;
+                    }
                     content=content+"<div class=\"row\">";
                     content = content + noVerticalDiv;
                     j++;
@@ -76,6 +85,7 @@ function ready(){
                 }
                 i++;
             }
+            content = content + "</div>";
             $(".slRow").html(content);
             $(".promElement").each(function(i,element){
                 $(element).find("img").attr("src",promotions[i].Image);
