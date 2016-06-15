@@ -34,6 +34,15 @@ var noVerticalDiv2="<div class=\"col-sm-12 assistance-by-format\">\
 
 var hrDiv = "<hr id=\"SL-category-hr\">";
 
+var activeFilters = ["All"];
+
+function toggleChevron(e) {
+		$(e.target)
+				.prev('.panel-heading')
+				.find("i.indicator")
+				.toggleClass('fa-caret-down fa-caret-right');
+}
+
 function ready(){
     
     var params = (window.location.search.replace("?", "")).split("=");
@@ -53,6 +62,10 @@ function ready(){
             var assistances =JSON.parse(response);//è un array di array associativo (primo indice: numero riga, secondo indice: nome attributo) 
             var content="";
             $("#orientation").append("<u>" + assisType + "</u>");
+            var lastAsRow = assistances.pop();
+            
+            createFilterPanel(lastAsRow);
+            
             var subcat = assistances[0].SubCategory;
             var bol=0;//flag: 0 se la pagina non ha il filterpanel, cioè ha solo una subCategory
             for(var i=0; i<assistances.length; i++){

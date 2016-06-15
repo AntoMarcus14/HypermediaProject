@@ -34,16 +34,22 @@ function createFilterPanel(filter){
     var i = 0;
     for(var index in filter) {
         if(i%2==0){
-            filterContent = filterContent + panelHeading1 + "href = \"#collapse" + i/2 + "\"><i class=\"indicator fa fa-caret-down\" aria-hidden=\"true\"></i>" +
+            if(filter[index]!=null){
+                filterContent = filterContent + panelHeading1 + "href = \"#collapse" + i/2 + "\"><i class=\"indicator fa fa-caret-down\" aria-hidden=\"true\"></i>" +
                 filter[index] + "</a></h4></div>";
+            }
+            
         }
         else{
-            filterContent = filterContent + "<div id=\"collapse" + (i-1)/2 + panelCollapseBegin;
-            var items = filter[index].split("_");
-            for(var j=0; j<items.length; j++){
-                            filterContent = filterContent + listItemBegin + filter[index] + "'>"+ items[j] + "</label></div></li>";
-                        }
-            filterContent = filterContent + "</ul></div>";
+            if(filter[index]!=null){
+                filterContent = filterContent + "<div id=\"collapse" + (i-1)/2 + panelCollapseBegin;
+                var items = filter[index].split("_");
+                for(var j=0; j<items.length; j++){
+                    filterContent = filterContent + listItemBegin + filter[index] + "'>"+ items[j] + "</label></div></li>";
+                }
+                filterContent = filterContent + "</ul></div>";
+            }
+            
         }
         i++;
     }
