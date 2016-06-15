@@ -710,6 +710,13 @@ Button to go to the highlights in AssistanceService page
     float: left;
     width:100%;
 }
+
+.subtitle{
+    position: relative;
+    color: #0b3d86;
+    text-align: center;
+    margin: 0 0 0 0;
+}
 /*******************************************************************************************
 REQUEST INFO
 *******************************************************************************************/
