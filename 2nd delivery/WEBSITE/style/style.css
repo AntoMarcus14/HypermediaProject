@@ -920,9 +920,16 @@ ASSISTANCE BY CATEGORY
     padding: 0 2px;
 }
 
+.promElement{
+    padding-left: 2%;
+}
+
+
 .promElement>div>img{
     width: 50%;
     display: inline-block;
+    margin-left: 2%;
+    margin-top: 2%;
 }
 
 .promElement>div>a{
@@ -940,5 +947,5 @@ ASSISTANCE BY CATEGORY
 
 .promText{
     text-align: center;
-    margin-bottom: 2%;
+    margin-bottom: 4%;
 }

@@ -3,7 +3,7 @@ var noVerticalDiv = "<div class=\"col-sm-4 promElement\">\
                             <div>\
                                 <img>\
                                 <a><p>Show<br>\
-                                    Device</p></a>\
+                                    device</p></a>\
                             </div>\
                             <h4 class=\"promName\"></h4>\
                             <p class=\"promText\"></p>\
@@ -12,7 +12,7 @@ var verticalDiv = "<div class=\"col-sm-4 promElement verticalLine\">\
                             <div>\
                                 <img>\
                                 <a><p>Show<br>\
-                                    Device</p></a>\
+                                    device</p></a>\
                             </div>\
                             <h4 class=\"promName\"></h4>\
                             <p class=\"promText\"></p>\
@@ -113,6 +113,9 @@ function ready(){
                 else{
                     $(element).find("a").attr("style", "color:lightsteelblue");
                 }
+                if(promotions[i].Type=="Smart Life Services"){
+                    $(element).find("a" + ">p").html("Show<br>service");
+                }
             });
             createFilterPanel(filterPanel);
             
@@ -136,44 +139,17 @@ function ready(){
             // the checked state of the group/box on the other hand will change
             // and the current value is retrieved using .prop() method
             $(group).prop("checked", false);
-            $(group).each(function(i, el){
-                    var active = $(el).parent().text().trim();
-                    var index = activeFilters.indexOf(active);
-                    if (index > -1 && active!="All") {
-                        activeFilters.splice(index,1);
-                    }
-            });
             $box.prop("checked", true);
             var active = $box.parent().text().trim();
-            if(active!="All"){
-                activeFilters.push(active);
+            if(active=="All"){
+                $(".promotionRow").show();
             }
-            
-            $(".element").show();
-            //console.log($box.parent().text().trim());
-            $(".element").each(function(i, el){
-                    for(var j=0; j<activeFilters.length; j++){
-                        if(!$(el).attr("title").includes(activeFilters[j])){
-                            $(el).hide();
-                        }
-                    }
-            });
+            else{
+                $(".promotionRow").hide();
+                $(".promotionRow[title='" + active + "']").show();
+            }
         } else {
-            var active = $box.parent().text().trim();
-            var index = activeFilters.indexOf(active);
-            if (index > -1 && active!="All") {
-                activeFilters.splice(index,1);
-            }
-            $box.prop("checked", false);
-            $(".element").show();
-            //console.log($box.parent().text().trim());
-            $(".element").each(function(i, el){
-                    for(var j=0; j<activeFilters.length; j++){
-                        if(!$(el).attr("title").includes(activeFilters[j])){
-                            $(el).hide();
-                        }
-                    }
-            });
+            $(".promotionRow").show();
         }
     });
 }
