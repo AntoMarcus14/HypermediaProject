@@ -636,8 +636,8 @@ Button to go to the highlights in AssistanceService page
 ***********************************************************************************/
 #rightImgSL{
     position: relative;
-    width: 80%;
     margin-top: 5%;
+    width:70%;
     left: 12%;
     padding-bottom: 2%;
 }
@@ -689,7 +689,7 @@ Button to go to the highlights in AssistanceService page
 .descriptSl{
     position: relative;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 3%;
 }
 
 .subtitle{
@@ -701,7 +701,8 @@ Button to go to the highlights in AssistanceService page
 
 .content{
     position: relative;
-    text-align: center;
+    text-align:left;
+    padding-right: 2%;
 }
 
 /****************************************************************************************
