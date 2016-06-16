@@ -224,6 +224,7 @@ body{
 }
 
 
+
 .panel-back{
     margin-left: -2%; 
     width: 85.3%;
@@ -977,4 +978,43 @@ ASSISTANCE BY CATEGORY
 .promText{
     text-align: center;
     margin-bottom: 4%;
+}
+
+/*************************************************************************************************
+highlights
+*************************************************************************************************/
+
+.highlight-content{
+    position: relative;
+    border: 1px solid #333;
+    margin-left: 4%;
+    width: 92%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    
+}
+
+.highlight-content>img{
+    width: 5%;
+    position: absolute;
+    bottom: 90%;
+}
+
+.highlight-arrow-image{
+    margin-right: 4%;   
+    margin-top: 4%;
+}
+
+#highlight-image{
+    margin-top: 1.5%;
+    width: 90%;
+}
+
+@media only screen and (max-width : 768px ) {    
+    .highlight-content>img{
+        width: 5%;
+        position: absolute;
+        bottom: 97%;
+    }
 }
