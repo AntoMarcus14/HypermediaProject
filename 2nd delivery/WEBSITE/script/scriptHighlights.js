@@ -3,22 +3,16 @@ $(document).ready(ready);
 var elem = "<a><h4><span class=\"glyphicon glyphicon-circle-arrow-right highlight-arrow-image\"></span><u></u></h4></a>";
 
 function ready(){
-        
-    var params = (window.location.search.replace("?", "")).split("=");
-    var orientation = decodeURIComponent(params[1]);
-    if (params.length>=2) {
-        var orientComp = orientation.split(" > ");
-        var id = orientComp[orientComp.length-1];
-        $.ajax({
+    
+    $.ajax({
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
         url: "../getHighlights.php", //Relative or absolute path to file.php file
-        //data: {assistance:id},
         success: function(response) {
             console.log(JSON.parse(response));
-            var highlights=JSON.parse(response);               
-            $("#orientation").html(addTag(orientation));
+            var highlights=JSON.parse(response);    
+            console.log(highlights);
             var leftContent = [];
             var rightContent = [];
             var i = 0;
@@ -42,13 +36,17 @@ function ready(){
             content = content + "</div>";
             $(".highlight-content").append(content);
             $(".highlight-arrow-image").each(function(i,element){
-                $(element).html(highlights[i].Name);
-            })
+                if(highlights[i].Description!=""){
+                    $(element).parent().parent().attr("href","assistance-service.html?ass=" + "Assistance Services" + " > " + "Highlights" + " > " + highlights[i].Name);
+                } else {
+                    $(element).parent().parent().attr("style", "color:lightsteelblue");
+                }
+                $(element).parent().find("u").html(highlights[i].Name);
+            });
         },
         error: function(request,error) 
         {
             console.log("Error");
         }
     });
-    }
 }

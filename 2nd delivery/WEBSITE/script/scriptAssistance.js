@@ -62,7 +62,13 @@ function ready(){
                 $("#faqTab").hide();
             }
             console.log("finished2");
-            $(".btn-group").find("a").attr("href","assistance-by-category.html?ass=" + orientComp[orientComp.length-2]);
+            if(orientComp[orientComp.length-2]=="Highlights"){
+                $(".glyphicon-arrow-up").parent().attr("href","highlights.html"); 
+                $(".glyphicon-arrow-up").parent().append("   Up to " + orientComp[orientComp.length-2]);
+            } else {
+                $(".glyphicon-arrow-up").parent().attr("href","assistance-by-category.html?ass=" + orientComp[orientComp.length-2]);
+                $(".glyphicon-arrow-up").parent().append("   Up to " + orientComp[orientComp.length-2]);
+            }
         },
         error: function(request,error) 
         {

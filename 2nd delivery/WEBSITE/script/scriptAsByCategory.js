@@ -148,13 +148,13 @@ function ready(){
             var k=0;
             
             $(".name-of-assistance").each(function(i,element){
+                while($(element).parent().parent().parent().find("h3").text()!=assistances[k].SubCategory){
+                    k++;
+                }
                 if(assistances[k].Description!=""){
                     $(element).parent().parent().attr("href","assistance-service.html?ass=" + $("#orientation").text() + " > " + assistances[k].Name);
                 } else {
                     $(element).parent().parent().attr("style", "color:lightsteelblue");
-                }
-                while($(element).parent().parent().parent().find("h3").text()!=assistances[k].SubCategory){
-                    k++;
                 }
                 $(element).html(assistances[k].Name);
                 k++;

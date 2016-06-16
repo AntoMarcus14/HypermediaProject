@@ -8,7 +8,7 @@ if (mysqli_connect_errno()) { //verify connection
 }
 else {
     $assistanceType = $_POST['assistanceType'];
-    $query = "SELECT Name FROM assistanceService WHERE Highlight = '1' ";
+    $query = "SELECT Name, Description FROM assistanceService WHERE Highlight = '1' ";
     $result = mysqli_query($mysqli, $query);
     //if there are data available
     if(mysqli_num_rows($result) >0)

@@ -25,7 +25,9 @@ var verticalDiv2 = "<a>\
                 </a>" ;
 var hrDiv = "<hr id=\"SL-category-hr\">";
 var highlightButton = "<div class=\"row highButton\">\
+          <a href=\"highlights.html\">\
          <button class=\"button high\">Highlights</button>\
+         </a>\
       </div>"
 function ready(){
     
