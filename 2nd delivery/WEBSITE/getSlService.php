@@ -9,8 +9,7 @@ if (mysqli_connect_errno()) { //verify connection
 else {
     # extract results mysqli_result::fetch_array
     $type = $_POST['type'];
-    
-    $query = "SELECT Description, Image, Subtitle, Content FROM slService WHERE Title='$type' ";
+    $query = "SELECT * FROM slService LEFT JOIN slActivationAndRules ON slService.Title = slActivationAndRules.SmartLife WHERE slService.Title='$type' ";
     //query execution
     $result = mysqli_query($mysqli, $query);
     //if there are data available

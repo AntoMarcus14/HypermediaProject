@@ -20,7 +20,12 @@ function ready(){
             $(".subtitle").html(category[0].Subtitle);
             $(".content").html(category[0].Content);
             $(".glyphicon-arrow-up").parent().append("Up to Smart Life Category");
-            
+            $("#title").html(category[0].SmartLife);
+            $("#subtit").html(category[0].FirstSubtitle);
+            $("#desc").html(category[0].FirstDescription);
+            $("#imageSl").attr("src",category[0].FirstImage);
+            $("#subtit2").html(category[0].SecondSubtitle);
+            $("#desc2").html(category[0].SecondDescr);
         },
         error: function(request,error) 
         {

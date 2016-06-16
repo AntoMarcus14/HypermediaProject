@@ -692,7 +692,7 @@ Button to go to the highlights in AssistanceService page
     margin-top: 3%;
 }
 
-.subtitle{
+.subtitleSl{
     position: relative;
     color: #0b3d86;
     text-align: center;
@@ -705,9 +705,18 @@ Button to go to the highlights in AssistanceService page
     padding-right: 2%;
 }
 
-/****************************************************************************************
-    SL TV AND ENTERITANMENT
-*****************************************************************************************/
+.imgSl{
+    position: relative;
+    text-align: center;
+}
+
+.subtitleSl{
+    position: relative;
+    color: #fe000b;
+    text-align: center;
+    margin: 0 0 0 0; 
+}
+
 .description{
     position: relative;
     text-align: center;
@@ -736,6 +745,7 @@ Button to go to the highlights in AssistanceService page
     text-align: center;
     margin: 0 0 0 0;
 }
+
 /*******************************************************************************************
 REQUEST INFO
 *******************************************************************************************/
