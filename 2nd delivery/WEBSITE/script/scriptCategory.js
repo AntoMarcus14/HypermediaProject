@@ -71,7 +71,15 @@ function ready(){
             }
             $(".category-subtitle").each(function(i,element){
                 $(element).html(category[i].Title);
-                $(element).parent().parent().attr("href","assistance-by-category.html?ass=" + category[i].Title);
+                if(type1=="Assistance Services"){
+                    $(element).parent().parent().attr("href","assistance-by-category.html?cat=" + category[i].Title);
+                }
+                else if(type1=="Devices"){
+                    $(element).parent().parent().attr("href","device-by-category.html?cat=" + category[i].Title);
+                }
+                else{
+                    $(element).parent().parent().attr("href","sl-by-category.html?cat=" + category[i].Title);
+                }
             })
             $(".category-images").each(function(i,element){
                 $(element).attr("src", category[i].Image);

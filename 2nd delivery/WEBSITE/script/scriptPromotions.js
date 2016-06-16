@@ -143,13 +143,16 @@ function ready(){
             var active = $box.parent().text().trim();
             if(active=="All"){
                 $(".promotionRow").show();
+                $(".titleInsideHR").css("border-bottom", "1px solid black");
             }
             else{
                 $(".promotionRow").hide();
+                $(".titleInsideHR").css("border-bottom", "1px solid white");
                 $(".promotionRow[title='" + active + "']").show();
             }
         } else {
             $(".promotionRow").show();
+            $(".titleInsideHR").css("border-bottom", "1px solid black");
         }
     });
 }
