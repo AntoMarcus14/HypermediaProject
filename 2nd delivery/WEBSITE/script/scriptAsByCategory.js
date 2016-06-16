@@ -145,15 +145,20 @@ function ready(){
                 $(element).attr("title", titleName[i]);
             })
             
+            var k=0;
+            
             $(".name-of-assistance").each(function(i,element){
-                if(assistances[i].Description!=""){
-                    $(element).parent().parent().attr("href","assistance-service.html?ass=" + $("#orientation").text() + " > " + assistances[i].Name);
+                if(assistances[k].Description!=""){
+                    $(element).parent().parent().attr("href","assistance-service.html?ass=" + $("#orientation").text() + " > " + assistances[k].Name);
                 } else {
                     $(element).parent().parent().attr("style", "color:lightsteelblue");
                 }
-                $(element).html(assistances[i].Name);
+                while($(element).parent().parent().parent().find("h3").text()!=assistances[k].SubCategory){
+                    k++;
+                }
+                $(element).html(assistances[k].Name);
+                k++;
             });
-            $(".btn-group").find("a").attr("href","assistance-category.html");
         },
         error: function(request,error) 
         {
@@ -198,10 +203,13 @@ function ready(){
                 
             });
             if(active!="All"){
-                $("hr").each(function(i,element){
-                    $(element).hide();
-                });
+                $("hr").hide();
                 $(".verticalLine").removeClass("verticalLine");
+            } else {
+                $("hr").show();
+                $(".vertLin").each(function(i,element){
+                    $(element).addClass("verticalLine")
+                });
             }
         } else {
             var active = $box.parent().text().trim();
@@ -219,9 +227,7 @@ function ready(){
                         }
                     }
             });
-            $("hr").each(function(i,element){
-                $(element).show();
-            });
+            $("hr").show();
             $(".vertLin").each(function(i,element){
                 $(element).addClass("verticalLine")
             });
