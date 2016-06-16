@@ -14,20 +14,30 @@
 </head>
 <body>
 <nav class="top navbar navbar-fixed-top">
-            <div>
-               <div id="image-box">
-                <img src= "../img/TIM_logo.png" id="timLogo">
-               </div>
-               <p id="orientation"></p>
+            <div class="navbar-header">
+                <div id="imgBoxCollapsed">
+                    <a href="../index.html"><img src= "../img/TIM_logo.png" id="timLogo"></a>
+                </div>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#btnGroupPanel">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> 
+                </button>
             </div>
+            <div id="btnGroupPanel" class="collapse navbar-collapse">
+            <div id="image-box">
+                <a href="../index.html"><img src= "../img/TIM_logo.png" id="timLogo"></a>
+            </div>
+            <p id="orientation"></p>
             <div class="btn-group btn-group-justified">
-                <a href="#" class="btn btn-default">Who We Are</a>
+                <a href="who-we-are.html" class="btn btn-default">Who We Are</a>
                 <a href="#" class="btn btn-default">The Group</a>
-                <a href="#" class="btn btn-default">Promotions</a>
-                <a href="#" class="btn btn-default">Devices</a>
-                <a href="#" class="btn btn-default">Assistance Services</a>
-                <a href="#" class="btn btn-default">Smart Life Services</a>
-                <a href="#" class="btn btn-default">Request Info</a>
+                <a href="promotions.html" class="btn btn-default">Promotions</a>
+                <a href="device-category.html" class="btn btn-default">Devices</a>
+                <a href="assistance-category.html" class="btn btn-default">Assistance Services</a>
+                <a href="sl-category.html" class="btn btn-default">Smart Life Services</a>
+                <a href="request-info.html" class="btn btn-default">Request Info</a>
+            </div>
             </div>
 </nav>
 <div class="container-fluid tab-back">

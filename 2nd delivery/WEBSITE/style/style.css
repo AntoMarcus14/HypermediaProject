@@ -47,6 +47,63 @@
     display: inline-block;
 }
 
+.icon-bar{
+    background-color: white;
+}
+
+#imgBoxCollapsed{
+    display: none;
+}
+
+@media only screen and (max-width : 768px ) {
+    
+    .btn-group-justified{
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        border-collapse: inherit;
+    }
+    .btn-group-justified>.btn,.btn-group-justified>.btn-group{
+        position: relative;
+        display:block;
+        float:none;
+        width:100%;
+        max-width:100%
+    }
+    
+    .btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
+        border-radius: 0;
+        margin-left: -1px
+    }
+    
+    .btn-group>.btn:last-child:not(:first-child), .btn-group>.dropdown-toggle:not(:first-child) {
+        border-radius: 0;
+    }
+    
+    #image-box{
+        display: none;
+    }
+    
+    #imgBoxCollapsed{
+    background-color: white;
+    width: 150px;
+    height: auto;
+    position: relative;
+    top: 4px;
+    left: 4%;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    display: inline-block;
+    }
+    
+    #btnGroupPanel{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+}
 /*********************************************
         HOME
 **********************************************/
@@ -124,6 +181,7 @@
     top: -10%;
     left: 5%;
     margin: 0 0 0 0;
+    background-color: white;
 }
 
 #followTag{
