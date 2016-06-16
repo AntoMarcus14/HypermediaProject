@@ -15,8 +15,10 @@ else {
     //echo "Successful connection\n"; // connection ok
 
     $device = $_POST['device'];
+    $category = $_POST['cat'];
     # extract results mysqli_result::fetch_array
-    $query = " SELECT * FROM device LEFT JOIN TechCharacteristics ON device.Name = TechCharacteristics.Device WHERE device.Name ='$device' ";
+    $query = " SELECT * FROM device LEFT JOIN guidedTour ON device.Name = guidedTour.PromName AND guidedTour.IndexCat ='$category' 
+                LEFT JOIN TechCharacteristics ON device.Name = TechCharacteristics.Device WHERE device.Name ='$device' ";
     //query execution
     $result = mysqli_query($mysqli, $query);
     //if there are data available
