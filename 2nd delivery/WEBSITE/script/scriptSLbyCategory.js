@@ -3,7 +3,7 @@ $(document).ready(ready);
 var noVerticalDiv1 = "<div class=\"col-sm-6 \">\
                     <div class=\"row\">\
                         <div class=\"col-sm-6\">\
-                            <img  class=\"category-images img\" alt=\"Image not found\">\
+                            <a href=\"#\"><img  class=\"category-images img\" alt=\"Image not found\"></a>\
                         </div>\
                         <div class=\"col-sm-6\">\
                             <h3 class=\"category-subtitle\"></h3>\
@@ -14,7 +14,7 @@ var noVerticalDiv1 = "<div class=\"col-sm-6 \">\
 var verticalDiv1 = "<div class=\"col-sm-6 verticalLine\">\
                     <div class=\"row\">\
                         <div class=\"col-sm-6\">\
-                            <img class=\"category-images img\" alt=\"Image not found\">\
+                            <a href=\"#\"><img class=\"category-images img\" alt=\"Image not found\"></a>\
                         </div>\
                         <div class=\"col-sm-6\">\
                             <h3 class=\"category-subtitle\"></h3>\
@@ -25,7 +25,7 @@ var verticalDiv1 = "<div class=\"col-sm-6 verticalLine\">\
 var noVerticalDiv2 = "<div class=\"col-sm-4 \">\
                     <div class=\"row\">\
                         <div class=\"col-sm-6\">\
-                            <img class=\"category-images img\" alt=\"Image not found\">\
+                            <a href=\"#\"><img class=\"category-images img\" alt=\"Image not found\"></a>\
                         </div>\
                         <div class=\"col-sm-6\">\
                             <h3 class=\"category-subtitle\"></h3>\
@@ -36,7 +36,7 @@ var noVerticalDiv2 = "<div class=\"col-sm-4 \">\
 var verticalDiv2 = "<div class=\"col-sm-4 verticalLine\">\
                     <div class=\"row\">\
                         <div class=\"col-sm-6\">\
-                            <img class=\"category-images img\" alt=\"Image not found\">\
+                            <a href=\"#\"><img class=\"category-images img\" alt=\"Image not found\"></a>\
                         </div>\
                         <div class=\"col-sm-6\">\
                             <h3 class=\"category-subtitle\"></h3>\
@@ -65,6 +65,7 @@ function ready(){
         data : {type : catName},
         success: function(response) {
             console.log(JSON.parse(response));
+            $("#orientation").append("<u>" + catName + "</u>");
             var category=JSON.parse(response);  //è un array di array associativo (primo indice: numero riga, secondo indice: nome attributo)      
             var content="";
             var i=0;//quanti div di contenuto ho messo
