@@ -2,45 +2,53 @@ $(document).ready(ready);
 
 var noVerticalDiv1 = "<div class=\"col-sm-6 \">\
                     <div class=\"row\">\
-                        <div class=\"col-sm-6\">\
+                        <div class=\"elem\">\
+                        <div class=\"col-sm-6 \">\
                             <a href=\"#\"><img  class=\"category-images img\" alt=\"Image not found\"></a>\
                         </div>\
                         <div class=\"col-sm-6\">\
                             <h3 class=\"category-subtitle\"></h3>\
                             <h4 class=\"slDesc\"><p></p></h4>\
                         </div>\
+                        </div>\
                     </div>\
                     </div>" ;
 var verticalDiv1 = "<div class=\"col-sm-6 verticalLine\">\
                     <div class=\"row\">\
+                        <div class=\"elem\">\
                         <div class=\"col-sm-6\">\
                             <a href=\"#\"><img class=\"category-images img\" alt=\"Image not found\"></a>\
                         </div>\
                         <div class=\"col-sm-6\">\
                             <h3 class=\"category-subtitle\"></h3>\
                             <h4 class=\"slDesc\"><p></p></h4>\
+                        </div>\
                         </div>\
                     </div>\
                     </div>" ;
 var noVerticalDiv2 = "<div class=\"col-sm-4 \">\
                     <div class=\"row\">\
+                        <div class=\"elem\">\
                         <div class=\"col-sm-6\">\
                             <a href=\"#\"><img class=\"category-images img\" alt=\"Image not found\"></a>\
                         </div>\
                         <div class=\"col-sm-6\">\
                             <h3 class=\"category-subtitle\"></h3>\
                             <h4 class=\"slDesc\"><p></p></h4>\
+                        </div>\
                         </div>\
                     </div>\
                     </div>" ;
 var verticalDiv2 = "<div class=\"col-sm-4 verticalLine\">\
                     <div class=\"row\">\
+                        <div class=\"elem\">\
                         <div class=\"col-sm-6\">\
                             <a href=\"#\"><img class=\"category-images img\" alt=\"Image not found\"></a>\
                         </div>\
                         <div class=\"col-sm-6\">\
                             <h3 class=\"category-subtitle\"></h3>\
                             <h4 class=\"slDesc\"><p></p></h4>\
+                        </div>\
                         </div>\
                     </div>\
                     </div>" ;                    
@@ -101,6 +109,11 @@ function ready(){
             })
             $(".category-images").each(function(i,element){
                 $(element).attr("src", category[i].Image);
+            })
+            $(".elem").each(function(i,el){
+                if(category[i].Description!=""){
+                    $(el).find("a").attr("href","sl-service.html?sl=" +  $("#orientation").text() + " > "  + category[i].Title);
+                }
             })
             
         },

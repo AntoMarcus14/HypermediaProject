@@ -693,6 +693,11 @@ Button to go to the highlights in AssistanceService page
 /***********************************************************************************
     SL Service
 ***********************************************************************************/
+.elem{
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
 #rightImgSL{
     position: relative;
     margin-top: 5%;
