@@ -5,8 +5,11 @@ $(document).ready(Ready);
 
 function Ready(){
     
-    var h = $("#thirdCol").height();
-    $(".colRes").equalHeights();
+    $(function() {
+        $('#secondCol').matchHeight({
+            target: $('#thirdCol')
+        });
+    });
     var interval;
     
     interval = setInterval(animateGallery, 2000);
@@ -33,10 +36,10 @@ function Ready(){
         $("#slideArrow").css("top",8.5+(window.GIndex-1)*32+"%");
     });
     
-    $(window).resize( function(){
+    /*$(window).resize( function(){
         var h = $("#thirdCol").height();
         $("#secondCol").height(h);
-    });
+    });*/
 }
 
 function animateGallery() {
