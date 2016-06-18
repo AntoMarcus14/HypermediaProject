@@ -47,11 +47,14 @@ function ready(){
             
             $(".element").each(function(i,el){
                         $(el).attr("title", devices[i].Tags);
-                        $(el).find("img").attr("src", devices[i].Image1);
+                        $(el).find("img").attr("src", devices[i].Image);
                         $(el).find(".devName").html(devices[i].Name);
                         $(el).find(".price").prepend(devices[i].FullPrice.replace("euro","€"));
                         if(devices[i].Description!=""){
                             $(el).find("a").attr("href","device.html?dev=" + $("#orientation").text() + " > " + devices[i].Name);
+                        }
+                        else {
+                            $(el).find(".devName").attr("style", "color:lightsteelblue");
                         }
                         var items = devices[i].ShortDesc.split("_");
                         var list = "<ul>";

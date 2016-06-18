@@ -43,21 +43,21 @@
                 <h1 class="title-without-tab">Request Info</h1>
             </div>
             <div class="row">
-                <form  action="index.html">
+                <form  action="../index.html">
                     <table class="request-info-table table-bordered">
                         <tr>
                             <th class="request-info-th" colspan="2"><h4 id="request-info-title-form">Write a question</h4></th>
                         </tr>
                         <tr>
                             <td class="request-info-td col-sm-3">From*<br>(Name Surname)</td>
-                            <td class="request-info-td"><input type="text" name="from" class="col-sm-12 request-info-input"></td>
+                            <td class="request-info-td"><input type="text" name="from" class="col-sm-12 request-info-input" required></td>
                         </tr>
                         <tr>
                             <td class="request-info-td">
                                 Email*
                             </td>
                             <td class="request-info-td">
-                                <input type="email" name="email" class="request-info-input col-sm-12">
+                                <input type="email" name="email" class="request-info-input col-sm-12" required>
                             </td>
                         </tr>
                         <tr>
@@ -73,7 +73,7 @@
                                 Text of the question*
                             </td>
                             <td class="request-info-td">
-                                <textarea class="request-info-input col-sm-12 input-text-form " rows="8"></textarea>
+                                <textarea class="request-info-input col-sm-12 input-text-form " rows="8" required></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -88,3 +88,4 @@
             </div>
         </div>
     </body>
+</html>

@@ -1,8 +1,14 @@
 $(document).ready(ready);
 
 function ready(){
+<<<<<<< HEAD
     var param = (window.location.search.replace("?","")).split("=");
     var orientation = decodeURIComponent(param[1]);
+=======
+    var params = (window.location.search.replace("?","")).split("=");
+    var orientation = decodeURIComponent(params[1]);
+    var catName = decodeURIComponent(param[1]);
+>>>>>>> origin/master
     if(param.length>=2){
     var orientComp = orientation.split(" > ");
     var slID = orientComp[orientComp.length-1];

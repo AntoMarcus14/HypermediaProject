@@ -44,8 +44,8 @@ function ready(){
             $(".fullPrice" + ">h3").html(price + " €");
             $(".monthPrice").html(devices[0].MonthPrice.replace("euro","€"));
             $(".color").attr("src",devices[0].Color);
-            $("#mainDeviceImg").attr("src",devices[0].Image1);
-            $("#buyDeviceImage").attr("src",devices[0].Image1);
+            $("#mainDeviceImg").attr("src",devices[0].Image);
+            $("#buyDeviceImage").attr("src",devices[0].Image);
             $(".purchaseSummary" + ">h4").html(devices[0].Name);
             $(".purchaseSummary" + ">.devicePrice").html(price+ " €");
             if(devices[0].Image2=="null"){
@@ -54,7 +54,7 @@ function ready(){
                 $("#3devicePic").hide();
             }
             else {
-                $("#1devicePic").attr("src",devices[0].Image1);
+                $("#1devicePic").attr("src",devices[0].Image);
                 $("#2devicePic").attr("src",devices[0].Image2);
                 $("#3devicePic").attr("src",devices[0].Image3);
             }
