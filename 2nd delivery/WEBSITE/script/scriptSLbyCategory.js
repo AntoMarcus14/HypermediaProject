@@ -7,7 +7,7 @@ var noVerticalDiv1 = "<div class=\"col-sm-6 \">\
                             <a href=\"#\"><img  class=\"category-images img\" alt=\"Image not found\"></a>\
                         </div>\
                         <div class=\"col-sm-6\">\
-                            <h3 class=\"category-subtitle\"></h3>\
+                            <a href=\"#\"><h3 class=\"category-subtitle\"></h3>\</a>\
                             <h4 class=\"slDesc\"><p></p></h4>\
                         </div>\
                         </div>\
@@ -20,7 +20,7 @@ var verticalDiv1 = "<div class=\"col-sm-6 verticalLine\">\
                             <a href=\"#\"><img class=\"category-images img\" alt=\"Image not found\"></a>\
                         </div>\
                         <div class=\"col-sm-6\">\
-                            <h3 class=\"category-subtitle\"></h3>\
+                            <a href=\"#\"><h3 class=\"category-subtitle\"></h3></a>\
                             <h4 class=\"slDesc\"><p></p></h4>\
                         </div>\
                         </div>\
@@ -33,7 +33,7 @@ var noVerticalDiv2 = "<div class=\"col-sm-4 \">\
                             <a href=\"#\"><img class=\"category-images img\" alt=\"Image not found\"></a>\
                         </div>\
                         <div class=\"col-sm-6\">\
-                            <h3 class=\"category-subtitle\"></h3>\
+                            <a href=\"#\"><h3 class=\"category-subtitle\"></h3></a>\
                             <h4 class=\"slDesc\"><p></p></h4>\
                         </div>\
                         </div>\
@@ -46,7 +46,7 @@ var verticalDiv2 = "<div class=\"col-sm-4 verticalLine\">\
                             <a href=\"#\"><img class=\"category-images img\" alt=\"Image not found\"></a>\
                         </div>\
                         <div class=\"col-sm-6\">\
-                            <h3 class=\"category-subtitle\"></h3>\
+                            <a href=\"#\"><h3 class=\"category-subtitle\"></h3></a>\
                             <h4 class=\"slDesc\"><p></p></h4>\
                         </div>\
                         </div>\
@@ -57,7 +57,9 @@ var hrDiv = "<hr id=\"SL-category-hr\">";
 
 function ready(){
     var param = (window.location.search.replace("?","")).split("=");
-    var catName = decodeURIComponent(param[1]);
+    var orientation = decodeURIComponent(param[1]);
+    var orientComp = orientation.split(" > ");
+    var catName = orientComp[orientComp.length-1];
     if(param.length>=2){
     $(".title-without-tab").html(catName);
     if(catName=="TV & Entertainment" || catName=="Home & Family"){    
@@ -105,14 +107,20 @@ function ready(){
                 $(element).html(category[i].Title);
             })
             $(".slDesc").each(function(i,element){
-                $(element).html(category[i].Description);
+                $(element).html(category[i].LongDesc);
             })
             $(".category-images").each(function(i,element){
-                $(element).attr("src", category[i].Image);
+                $(element).attr("src", category[i].LittleImage);
             })
             $(".elem").each(function(i,el){
-                if(category[i].Description!=""){
+                if(category[i].LongDesc!=""){
                     $(el).find("a").attr("href","sl-service.html?sl=" +  $("#orientation").text() + " > "  + category[i].Title);
+                    $(el).find("category-subtitle").parent().attr("href","sl-service.html?sl=" +  $("#orientation").text() + " > "  + category[i].Title);
+                }
+                else{
+                    $(el).find("a").attr("href","#");
+                    $(el).find(".category-subtitle").parent().attr("href","#");
+                    $(el).find(".category-subtitle").attr("style","color:lightsteelblue");
                 }
             })
             

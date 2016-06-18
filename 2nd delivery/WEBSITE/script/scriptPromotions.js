@@ -107,7 +107,7 @@ function ready(){
                         $(element).find("a").attr("href", "device.html?dev=Promotions > " + promotions[i].Name);
                     }
                     else {
-                        $(element).find("a").attr("href", "SL-Service.html?sl=Promotions > " + promotions[i].Name);
+                        $(element).find("a").attr("href", "sl-service.html?sl=Promotions > " + promotions[i].Name);
                     }
                 }
                 else{

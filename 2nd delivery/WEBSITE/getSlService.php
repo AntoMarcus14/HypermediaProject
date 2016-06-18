@@ -8,8 +8,9 @@ if (mysqli_connect_errno()) { //verify connection
 }
 else {
     # extract results mysqli_result::fetch_array
-    $type = $_POST['type'];
-    $query = "SELECT * FROM slService LEFT JOIN slActivationAndRules ON slService.Title = slActivationAndRules.SmartLife WHERE slService.Title='$type' ";
+    $category = $_POST['category'];
+    $slID = $_POST['slID'];
+    $query = "SELECT * FROM slService LEFT JOIN guidedTour ON slService.Title = guidedTour.PromName AND guidedTour.IndexCat = '$category' LEFT JOIN slActivationAndRules ON slService.Title = slActivationAndRules.SmartLife WHERE slService.Title='$slID' ";
     //query execution
     $result = mysqli_query($mysqli, $query);
     //if there are data available

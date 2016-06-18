@@ -9,8 +9,7 @@ if (mysqli_connect_errno()) { //verify connection
 else {
     # extract results mysqli_result::fetch_array
     $type = $_POST['type'];
-    
-    $query = "SELECT Title, Description, Image, Subtitle, Content FROM slService WHERE Category='$type' ";
+    $query = "SELECT Title, LongDesc, LittleImage, ShortDesc FROM slService WHERE Category='$type'";
     //query execution
     $result = mysqli_query($mysqli, $query);
     //if there are data available

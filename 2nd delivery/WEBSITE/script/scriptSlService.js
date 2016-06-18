@@ -2,33 +2,31 @@ $(document).ready(ready);
 
 function ready(){
     var param = (window.location.search.replace("?","")).split("=");
-    var orientation = decodeURIComponent(params[1]);
-    var catName = decodeURIComponent(param[1]);
+    var orientation = decodeURIComponent(param[1]);
     if(param.length>=2){
-    $(".title-with-tab").html(catName);
     var orientComp = orientation.split(" > ");
     var slID = orientComp[orientComp.length-1];
-    var category = orientComp[orientComp.length-2];
+    var slcategory = orientComp[orientComp.length-2];
+    $(".title-with-tab").html(slID);
     $.ajax({
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
         url: "../getSlService.php", //Relative or absolute path to file.php file
-        data : {type : catName},
+        data : {category : slcategory, slID : slID},
         success: function(response) {
             console.log(JSON.parse(response));
             var category=JSON.parse(response);  //è un array di array associativo (primo indice: numero riga, secondo indice: nome attributo)      
             $("#orientation").html(addTag(orientation));
-            if(category[0].SmartLife=="WellUp"||category[0].SmartLife=="TIM Wallet"){
+            if(category[0].Subscription==""){
                 $("#subscript").hide();
             }
-            $(".descriptSl").html(category[0].Description);
+            $(".descriptSl").html(category[0].LongDesc);
             $("#rightImgSL").attr("src",category[0].Image);
             $(".subtitle").html(category[0].Subtitle);
             $(".content").html(category[0].Content);
-            $(".glyphicon-arrow-up").parent().append("Up to Smart Life Category");
-            $("#title").html(category[0].SmartLife);
-            if(category[0].SmartLife=="WellUp"){
+            $("#title").html(category[0].Title);
+            if(category[0].Title=="Well Up"){
                $("#subtit").hide();
                $(".videoTag2").attr("src",category[0].SecondDescr);
                $("#desc2").hide();  
@@ -42,13 +40,13 @@ function ready(){
             $("#subtit2").html(category[0].SecondSubtitle);
             $("#summary").append(category[0].Subscription);
             var decodedUrl = decodeURI(window.location.href);
-            if(category=="Promotions" || orientComp[orientComp.length-3]=="Smart Life Services"){
-                $(".glyphicon-arrow-up").parent().append(category);
-                if(category=="Promotions"){
+            if(slcategory=="Promotions" || orientComp[orientComp.length-3]=="Smart Life Services"){
+                $(".glyphicon-arrow-up").parent().append("  Up to " + slcategory);
+                if(slcategory=="Promotions"){
                     $(".glyphicon-arrow-up").parent().attr("href", "promotions.html");
                 }
                 else{
-                    $(".glyphicon-arrow-up").parent().attr("href", "sl-by-category.html?cat=" + category);
+                    $(".glyphicon-arrow-up").parent().attr("href", "sl-by-category.html?cat=" + slcategory);
                 }
             }
             else{

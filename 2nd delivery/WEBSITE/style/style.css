@@ -826,6 +826,13 @@ Button to go to the highlights in AssistanceService page
 
 .videoTag2{
    margin-top: 4%; 
+   margin-left: 6%;
+}
+
+@media only screen and (max-width : 1140px) and (min-width: 835px ) {
+    .videoTag2{
+        margin-left: -10%;
+    }
 }
 
 
