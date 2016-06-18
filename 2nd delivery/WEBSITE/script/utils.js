@@ -56,3 +56,35 @@ function createFilterPanel(filter){
     $(".panel-body").html(filterContent);
     $('label:contains("All")').find("input").prop("checked", true);
 }
+
+
+//resets the orientation info in case there are 2 consecutive transitions of multiple topics
+function resetOrientation(orientation){
+    orientComp = orientation.split(" > ");
+    if(orientComp[0]=="Promotions" && orientComp.length>=4  || orientComp.length>=5) {
+        
+        var name = orientComp[orientComp.length-2];
+        var newOrientation = "";
+        $.ajax({
+        method: "POST",
+        //dataType: "json", //type of data
+        crossDomain: true, //localhost purposes
+        url: "../searchName.php", //Relative or absolute path to file.php file
+        data : {name : name},
+        success: function(response) {
+            console.log(JSON.parse(response));
+            var result=JSON.parse(response);
+            newOrientation = newOrientation + result.TableName + " > " + result.Category + " > " + name + " > <u>" + orientComp[orientComp.length-1] + "</u>";
+        },
+        error: function(request,error) 
+        {
+            console.log("Error");
+        }
+        });
+        return newOrientation;
+    }
+    else{
+        //if don't have to reset the orientation info the function returns the same orientation
+        return addTag(orientation);
+    }
+}
