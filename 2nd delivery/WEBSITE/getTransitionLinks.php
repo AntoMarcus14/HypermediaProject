@@ -20,10 +20,10 @@ else {
     $query3 = "SELECT Source, Destination, Active, slService.Image AS sourceI, device.Image AS destI FROM transition LEFT JOIN slService ON transition.Source = slService.Title 
                LEFT JOIN device ON transition.Destination = device.Name 
                WHERE Source = '$name' ";
-    if($type == "Devices") {
+    if($type == "Assistance for Devices") {
         $query = $query1;
     }
-    else if($type == "Smart Life Services") {
+    else if($type == "Device for SL") {
         $query = $query3;
     }
     else {

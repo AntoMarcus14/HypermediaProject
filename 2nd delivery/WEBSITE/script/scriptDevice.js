@@ -58,6 +58,11 @@ function ready(){
                 $("#2devicePic").attr("src",devices[0].Image2);
                 $("#3devicePic").attr("src",devices[0].Image3);
             }
+            if(devices[0].ActiveTransition=="1"){
+              $("#assistanceLink").attr("href","assistance-for-devices.html?dev=" + orientation + " > Assistance for");  
+            }else{
+              $("#assistanceLink").attr("style","color:lightsteelblue");    
+            }
             
             var slItems = devices[0].SLServices.split("_");
             var list="";

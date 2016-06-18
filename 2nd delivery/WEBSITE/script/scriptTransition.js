@@ -1,89 +1,63 @@
 $(document).ready(ready);
 
+var oddRow = "<tr>\
+                <td class=\"transition-table-row\">\
+                   <span><a><u class=\"word-content-style\"></u></a></span>\
+                   <img  class=\"img-content-style\">\
+                </td>\
+            </tr>";
+
+var evenRow = "<tr>\
+                                <td class=\"transition-table-row\">\
+                                    <img  class=\"img-content-style\">\
+                                    <span><a><u class=\"word-content-style\"></u></a></span>\
+                                </td>\
+                            </tr>";
+
 function ready(){
-    
-    
+    var type1 = $("title").html();
     var params = (window.location.search.replace("?", "")).split("=");
     var orientation = decodeURIComponent(params[1]);
     if (params.length>=2) {
         
       var orientComp = orientation.split(" > ");
-      var source = orientComp[orientComp.length-2];
-      var category = orientComp[orientComp.length-2];
+      var name1 = orientComp[orientComp.length-2];
       
+        console.log(type1);
+        console.log(name1);
       $.ajax({
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "../getDevice.php", //Relative or absolute path to file.php file
-        data: {device: deviceID, cat: category},
+        url: "../getTransitionLinks.php", //Relative or absolute path to file.php file
+        data: {type: type1, name: name1},
         success: function(response) {
             console.log(JSON.parse(response));
-            var devices=JSON.parse(response);               
-            
-            $("#orientation").html(addTag(orientation));
-            $(".device-name").html(devices[0].Name);
-            $(".devDescription").html(devices[0].Description);
-            var price=devices[0].FullPrice.replace("euro","€");
-            $(".fullPrice" + ">h3").html(price + " €");
-            $(".monthPrice").html(devices[0].MonthPrice.replace("euro","€"));
-            $(".color").attr("src",devices[0].Color);
-            $("#mainDeviceImg").attr("src",devices[0].Image);
-            $("#buyDeviceImage").attr("src",devices[0].Image);
-            $(".purchaseSummary" + ">h4").html(devices[0].Name);
-            $(".purchaseSummary" + ">.devicePrice").html(price+ " €");
-            if(devices[0].Image2=="null"){
-                $("#1devicePic").hide();
-                $("#2devicePic").hide();
-                $("#3devicePic").hide();
-            }
-            else {
-                $("#1devicePic").attr("src",devices[0].Image);
-                $("#2devicePic").attr("src",devices[0].Image2);
-                $("#3devicePic").attr("src",devices[0].Image3);
-            }
-            
-            var slItems = devices[0].SLServices.split("_");
-            var list="";
-            for(var j=0; j<slItems.length; j=j+2){
-                    list = list + "<h4><li><a href=\"";
-                    if(slItems[j+1]=="1"){
-                        list = list + "sl-service.html?" + orientation + " > " + slItems[j];
-                    }
-                    else{
-                        list = list + "#\" style=\"color:lightsteelblue"; 
-                    }
-                    list = list + "\">" + slItems[j] + "</a></li></h4>";
-            }
-            $(".slList").html(list);
-            var tab="";
-            var i=0;
-            for(var index in devices[0]) {
-                if (devices[0].hasOwnProperty(index) && i>=16 && devices[0][index]!=null) {
-                    tab=tab+"<tr><td>" + index + "</td><td>" + devices[0][index] + "</td></tr> ";
-                }
+            var content="";
+            var assistances=JSON.parse(response);               
+            $(".title-without-tab").append(name1);
+            $(".col-sm-3").find("img").attr("src",assistances[0].sourceI);
+            $("#orientation").html(resetOrientation(orientation));
+            for (var i=0; i < assistances.length; i++){
+                content = content + oddRow;
                 i++;
-            }
-            $("#tech" + ">Table").html(tab);
-            var decodedUrl = decodeURI(window.location.href);
-            if(category=="Promotions" || orientComp[orientComp.length-3]=="Devices"){
-                if(devices[0].Prev!=null){
-                    $(".glyphicon-arrow-left").parent().attr("href", decodedUrl.replace(devices[0].Name, devices[0].Prev));
-                }
-                if(devices[0].Next!=null){
-                    $(".glyphicon-arrow-right").parent().attr("href", decodedUrl.replace(devices[0].Name, devices[0].Next));
-                }
-                $(".glyphicon-arrow-up").parent().append(category);
-                if(category=="Promotions"){
-                    $(".glyphicon-arrow-up").parent().attr("href", "promotions.html");
-                }
-                else{
-                    $(".glyphicon-arrow-up").parent().attr("href", "device-by-category.html?cat=" + category);
+                if(i < assistances.length){
+                    content = content + evenRow;
                 }
             }
-            else{
-                
-            }
+            var dest;
+            $("tbody").append(content);
+            $(".word-content-style").each(function(i,el){
+                $(el).html(assistances[i].Destination);
+                if(assistances[i].Active=="1"){
+                    $(el).parent().attr("href","assistance-service.html?as=" + orientation + assistances[i].Destination);
+                }else{
+                    $(el).parent().attr("style","color:grey");    
+                }
+            });
+            $(".img-content-style").each(function(i,el){
+                $(el).attr("src",assistances[i].destI);
+            });
         },
         error: function(request,error) 
         {

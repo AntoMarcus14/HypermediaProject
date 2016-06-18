@@ -1122,18 +1122,35 @@ ASSISTANCE FOR
 #transition-page-content{}
 
 .word-content-style{
-    margin-left: 20%;
-    margin-right: 20%;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .img-content-style{
     margin-bottom: 1%;
     margin-top: 1%;
-    margin-right: 13%;
-    margin-left: 13%;
     width: 20%;
     vertical-align: middle;
+}
+
+#transition-page-content > tbody > tr:nth-child(2n+1) > td > span{
+   margin-right:20%;
+   margin-left: 5%;    
+}
+
+#transition-page-content > tbody > tr:nth-child(2n+1) > td > img{
+   margin-right:0%;
+   margin-left: 0%;    
+}
+
+#transition-page-content > tbody > tr:nth-child(2n) > td > span{
+   margin-right:0%;
+   margin-left: 0%;
+      
+}
+
+#transition-page-content > tbody > tr:nth-child(2n) > td > img{
+    margin-right:20%;
+   margin-left: 5%;         
 }
 
 #transition-page-content > tbody > tr:nth-child(2n+1) > td{
