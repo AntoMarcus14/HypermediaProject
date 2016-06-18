@@ -1081,3 +1081,52 @@ highlights
         bottom: 97%;
     }
 }
+
+/***************************************************************************************************
+ASSISTANCE FOR
+***************************************************************************************************/
+
+.transition-left-content{
+    text-align: center;
+}
+
+.button-back-to-device{
+    padding-left: 5%;
+    background-color: #0b3d86;
+    margin-bottom: 2%;
+    margin-top: 1%;
+}
+
+.button-back-to-device>.glyphicon{
+    color: white;
+    margin-right: 3%;
+}
+
+.transition-page-image{
+    width: 100%;
+}
+
+#transition-page-content{}
+
+.word-content-style{
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 24px;
+}
+
+.img-content-style{
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-right: 13%;
+    margin-left: 13%;
+    width: 20%;
+    vertical-align: middle;
+}
+
+#transition-page-content > tbody > tr:nth-child(2n+1) > td{
+   background-color: lightblue;
+}
+
+.transition-table-row{
+   text-align: center;
+}
