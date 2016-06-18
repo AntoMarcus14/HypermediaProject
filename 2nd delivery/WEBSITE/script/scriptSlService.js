@@ -1,9 +1,8 @@
 $(document).ready(ready);
 
 function ready(){
-    var params = (window.location.search.replace("?","")).split("=");
-    var orientation = decodeURIComponent(params[1]);
-    var catName = decodeURIComponent(param[1]);
+    var param = (window.location.search.replace("?","")).split("=");
+    var orientation = decodeURIComponent(param[1]);
     if(param.length>=2){
     $(".title-with-tab").html(catName);
     var orientComp = orientation.split(" > ");
