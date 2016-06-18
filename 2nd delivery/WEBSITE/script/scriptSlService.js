@@ -1,7 +1,7 @@
 $(document).ready(ready);
 
 function ready(){
-    var param = (window.location.search.replace("?","")).split("=");
+    var params = (window.location.search.replace("?","")).split("=");
     var orientation = decodeURIComponent(params[1]);
     var catName = decodeURIComponent(param[1]);
     if(param.length>=2){
