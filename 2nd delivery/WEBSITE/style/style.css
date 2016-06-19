@@ -115,23 +115,20 @@
     position: relative;
     border-radius: 10px;
     background-color:#0b3d86;
-    float:right;
+    margin-left: 1%;
 }
 
 .right{
     background-color: white;
 }
 
-.left{
-    float:left;
-}
 
 .homeButtonRight{
     border: 1px solid black;
     margin-top: 5%;
     width: 98%;
     display: inline-block;
-    float:left;
+    margin-left: 1%;
     position: relative;
     border-radius: 10px;
     background-color:white;
@@ -409,6 +406,18 @@ end of SL category
     height: auto;
 }
 
+.devDescription{
+    font-size: 18px;
+}
+
+.fullPrice{
+    font-size: 18px;
+}
+
+.monthPrice{
+    font-size: 18px;
+}
+
 .imageGallery{
     text-align: center;
     margin-bottom: 2%;
@@ -443,7 +452,8 @@ h3.price{
 }
 
 .colorTag{
-    margin-top: 8%;
+    margin-top: 4%;
+    font-size: 18px;
 }
 
 .table-bordered{
