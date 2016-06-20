@@ -18,7 +18,7 @@ function Ready(){
     interval = setInterval(animateGallery, 2000);
         
     $("#img1").click(function(){
-        $("#mainImage").attr("src","../img/1.png");
+        $("#mainImage").attr("src","img/1.png");
         window.GIndex=1;
         $("#mainImage").parent().attr("href", homeLinks[window.GIndex-1]);
         clearInterval(interval);
@@ -27,7 +27,7 @@ function Ready(){
     });
     
     $("#img2").click(function(){
-        $("#mainImage").attr("src","../img/2.png");
+        $("#mainImage").attr("src","img/2.png");
         window.GIndex=2;
         $("#mainImage").parent().attr("href", homeLinks[window.GIndex-1]);
         clearInterval(interval);
@@ -35,7 +35,7 @@ function Ready(){
     });
     
     $("#img3").click(function(){
-        $("#mainImage").attr("src","../img/3.png");
+        $("#mainImage").attr("src","img/3.png");
         window.GIndex=3;
         $("#mainImage").parent().attr("href", homeLinks[window.GIndex-1]);
         clearInterval(interval);
@@ -56,7 +56,7 @@ function animateGallery() {
     }
     console.log(window.GIndex);
 
-    $("#mainImage").attr("src","../img/"+window.GIndex+".png");
+    $("#mainImage").attr("src","img/"+window.GIndex+".png");
     $("#mainImage").parent().attr("href", homeLinks[window.GIndex-1]);
     $("#slideArrow").css("top",8.5+(window.GIndex-1)*32+"%");
 }
