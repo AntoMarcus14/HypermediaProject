@@ -29,7 +29,7 @@ function ready(){
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "../getTransitionLinks.php", //Relative or absolute path to file.php file
+        url: "http://tim3m.altervista.org/getTransitionLinks.php", //Relative or absolute path to file.php file
         data: {type: type1, name: name1},
         success: function(response) {
             console.log(JSON.parse(response));

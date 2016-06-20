@@ -8,7 +8,7 @@ function ready(){
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "../getHighlights.php", //Relative or absolute path to file.php file
+        url: "http://tim3m.altervista.org/getHighlights.php", //Relative or absolute path to file.php file
         success: function(response) {
             console.log(JSON.parse(response));
             var highlights=JSON.parse(response);    

@@ -69,7 +69,7 @@ function resetOrientation(orientation){
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "../searchName.php", //Relative or absolute path to file.php file
+        url: "http://tim3m.altervista.org/searchName.php", //Relative or absolute path to file.php file
         data : {name : name},
         success: function(response) {
             console.log(JSON.parse(response));

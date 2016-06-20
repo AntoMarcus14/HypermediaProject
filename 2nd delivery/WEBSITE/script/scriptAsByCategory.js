@@ -55,7 +55,7 @@ function ready(){
     $.ajax({
         method: "POST",
         crossDomain: true,
-        url: "../getAsByCat.php",
+        url: "http://tim3m.altervista.org/getAsByCat.php",
         data: {assistanceType: assisType},
         success: function(response) {
             console.log(JSON.parse(response));

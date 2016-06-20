@@ -71,7 +71,7 @@ function ready(){
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "../getSmartLife.php", //Relative or absolute path to file.php file
+        url: "http://tim3m.altervista.org/getSmartLife.php", //Relative or absolute path to file.php file
         data : {type : catName},
         success: function(response) {
             console.log(JSON.parse(response));

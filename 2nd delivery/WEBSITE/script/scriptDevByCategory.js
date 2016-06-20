@@ -29,7 +29,7 @@ function ready(){
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "../getDevicesByCat.php", //Relative or absolute path to file.php file
+        url: "http://tim3m.altervista.org/getDevicesByCat.php", //Relative or absolute path to file.php file
         data: {category: catName},
         success: function(response) {
             console.log(JSON.parse(response));
