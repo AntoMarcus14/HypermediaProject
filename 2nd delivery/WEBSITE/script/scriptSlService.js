@@ -1,3 +1,7 @@
+var arrow = "<a href=\"#\" class=\"btn btn-color btn-default\">\
+                <span class=\"glyphicon glyphicon-arrow-left\">\
+                </span>\ </a>";
+
 $(document).ready(ready);
 
 function ready(){
@@ -39,6 +43,11 @@ function ready(){
             $("#imageSl").attr("src",category[0].FirstImage);
             $("#subtit2").html(category[0].SecondSubtitle);
             $("#summary").append(category[0].Subscription);
+            if(category[0].ActiveTransition=="1"){
+              $(".transition-panel").find("a").attr("href","devices-for-sl.html?dev=" + orientation + " > Devices for");  
+            }else{
+              $(".transition-panel").find("a").attr("style","color:lightsteelblue");    
+            }
             var decodedUrl = decodeURI(window.location.href);
             if(slcategory=="Promotions" || orientComp[orientComp.length-3]=="Smart Life Services"){
                 $(".glyphicon-arrow-up").parent().append("  Up to " + slcategory);
@@ -50,7 +59,11 @@ function ready(){
                 }
             }
             else{
-                
+               $(".glyphicon-arrow-up").parent().hide();
+               $(".glyphicon-arrow-right").parent().hide();  
+               $(".glyphicon-arrow-left").parent().html("<span class=\"glyphicon glyphicon-arrow-left\">\</span>  Back to " + slcategory);     
+               orientation=orientation.replace(" > " + orientComp[orientComp.length-1], "");
+               $(".glyphicon-arrow-left").parent().attr("href", "device.html?cat=" + orientation);    
             }
         },
         error: function(request,error) 
