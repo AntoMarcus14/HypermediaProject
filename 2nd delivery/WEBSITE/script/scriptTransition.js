@@ -50,7 +50,13 @@ function ready(){
             $(".word-content-style").each(function(i,el){
                 $(el).html(assistances[i].Destination);
                 if(assistances[i].Active=="1"){
-                    $(el).parent().attr("href","assistance-service.html?as=" + orientation + assistances[i].Destination);
+                    if(type1=="Assistance for Devices"){
+                        $(el).parent().attr("href","assistance-service.html?as=" + orientation + assistances[i].Destination);
+                    }else if(type1=="Devices for SL"){
+                        $(el).parent().attr("href","device.html?dev=" + orientation + assistances[i].Destination);
+                    }else{
+                        $(el).parent().attr("href","device.html?dev=" + orientation + assistances[i].Destination);
+                    }
                 }else{
                     $(el).parent().attr("style","color:grey");    
                 }
@@ -58,6 +64,15 @@ function ready(){
             $(".img-content-style").each(function(i,el){
                 $(el).attr("src",assistances[i].destI);
             });
+            orientation = orientation.replace(" > " + orientComp[orientComp.length-1], "");
+            if(type1=="Assistance for Devices"){
+                $(".button-back-to-device").attr("href","device.html?ass=" + orientation);
+            }else if(type1=="Devices for AS"){
+                $(".button-back-to-device").attr("href","assistance-service.html?ass=" + orientation);
+            }else{
+                $(".button-back-to-device").attr("href","sl-service.html?ass=" + orientation);
+            }
+            
         },
         error: function(request,error) 
         {
