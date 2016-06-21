@@ -13,7 +13,7 @@ else {
     $query1 = "SELECT Source, Destination, Active, device.Image AS sourceI, assistanceService.Image AS destI FROM transition LEFT JOIN device ON transition.Source = device.Name 
                LEFT JOIN assistanceService ON transition.Destination = assistanceService.Name 
                WHERE Source = '$name' ";
-    $query2 = "SELECT Source, Destination, Active, assistanceService.Image, device.Image FROM transition LEFT JOIN assistanceService 
+    $query2 = "SELECT Source, Destination, Active, assistanceService.Image AS sourceI, device.Image as destI FROM transition LEFT JOIN assistanceService 
                ON transition.Source = assistanceService.Name 
                LEFT JOIN device ON transition.Destination = device.Name 
                WHERE Source = '$name' ";
@@ -23,7 +23,7 @@ else {
     if($type == "Assistance for Devices") {
         $query = $query1;
     }
-    else if($type == "Device for SL") {
+    else if($type == "Devices for SL") {
         $query = $query3;
     }
     else {

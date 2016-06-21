@@ -61,6 +61,12 @@ function ready(){
             else{
                 $("#faqTab").hide();
             }
+            if(aService[0].ActiveTransition=="1"){
+              $(".transition-panel" + ">h4>a").attr("href","devices-for-as.html?as=" + orientation + " > Devices for");  
+            }else{
+              $(".transition-panel" + ">h4>a").attr("style","color:lightsteelblue");    
+            }
+            
             console.log("finished2");
             if(orientComp[orientComp.length-2]=="Highlights"){
                 $(".glyphicon-arrow-up").parent().attr("href","highlights.html"); 

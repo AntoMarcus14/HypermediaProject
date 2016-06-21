@@ -103,7 +103,10 @@ function ready(){
                 }
             }
             else{
-                
+                $(".glyphicon-arrow-right").parent().hide();
+                $(".glyphicon-arrow-up").parent().hide();
+                $(".glyphicon-arrow-left").parent().attr("href", "devices-for-as.html?as=" + orientation.replace(deviceID,""));
+                $(".glyphicon-arrow-left").parent().html("<span class=\"glyphicon glyphicon-arrow-left\"></span>   Back to Devices' list");
             }
         },
         error: function(request,error) 
