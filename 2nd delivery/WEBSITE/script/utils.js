@@ -74,14 +74,16 @@ function resetOrientation(orientation){
         success: function(response) {
             console.log(JSON.parse(response));
             var result=JSON.parse(response);
-            newOrientation = newOrientation + result.TableName + " > " + result.Category + " > " + name + " > <u>" + orientComp[orientComp.length-1] + "</u>";
+            newOrientation = newOrientation + result[0].TableName + " > " + result[0].Category + " > " + name + " > <u>" + orientComp[orientComp.length-1] + "</u>";
+            $("#orientation").html(newOrientation);
+            return newOrientation;
+            
         },
         error: function(request,error) 
         {
             console.log("Error");
         }
         });
-        return newOrientation;
     }
     else{
         //if don't have to reset the orientation info the function returns the same orientation

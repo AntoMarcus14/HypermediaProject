@@ -51,11 +51,11 @@ function ready(){
                 $(el).html(assistances[i].Destination);
                 if(assistances[i].Active=="1"){
                     if(type1=="Assistance for Devices"){
-                        $(el).parent().attr("href","assistance-service.html?as=" + orientation + assistances[i].Destination);
+                        $(el).parent().attr("href","assistance-service.html?as=" + orientation + " > " + assistances[i].Destination);
                     }else if(type1=="Devices for SL"){
-                        $(el).parent().attr("href","device.html?dev=" + orientation + assistances[i].Destination);
+                        $(el).parent().attr("href","device.html?dev=" + orientation + " > " + assistances[i].Destination);
                     }else{
-                        $(el).parent().attr("href","device.html?dev=" + orientation + assistances[i].Destination);
+                        $(el).parent().attr("href","device.html?dev=" + orientation + " > " + assistances[i].Destination);
                     }
                 }else{
                     $(el).parent().attr("style","color:grey");    
