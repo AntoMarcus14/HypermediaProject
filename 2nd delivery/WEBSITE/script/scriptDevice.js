@@ -69,7 +69,7 @@ function ready(){
             for(var j=0; j<slItems.length; j=j+2){
                     list = list + "<h4><li><a href=\"";
                     if(slItems[j+1]=="1"){
-                        list = list + "sl-service.html?" + orientation + " > " + slItems[j];
+                        list = list + "sl-service.html?sl=" + orientation + " > " + slItems[j];
                     }
                     else{
                         list = list + "#\" style=\"color:lightsteelblue"; 

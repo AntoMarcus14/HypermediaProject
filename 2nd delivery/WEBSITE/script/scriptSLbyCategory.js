@@ -107,7 +107,7 @@ function ready(){
                 $(element).html(category[i].Title);
             })
             $(".slDesc").each(function(i,element){
-                $(element).html(category[i].LongDesc);
+                $(element).html(category[i].ShortDesc);
             })
             $(".category-images").each(function(i,element){
                 $(element).attr("src", category[i].LittleImage);
