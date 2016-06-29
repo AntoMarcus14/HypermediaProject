@@ -55,7 +55,7 @@
     display: none;
 }
 
-@media only screen and (max-width : 768px ) {
+@media only screen and (max-width : 767px ) {
     
     .btn-group-justified{
         display: inline-block;
@@ -262,7 +262,7 @@ body{
         
 }
 
-@media only screen and (max-width : 1367px ) {
+@media only screen and (max-width : 1367px ) and (min-width : 768px ) {
     .tab-back{
         margin-left: 0%;
         width: 99%;
@@ -583,7 +583,6 @@ WhoWeAre
 }
 
 .descript{
-    position: relative;
     margin-left: 2%;
     margin-right: 2%;
 }
@@ -618,12 +617,6 @@ WhoWeAre
     padding-top: 1%;
     color:#0b3d86;
     text-align: center;
-}
-
-.textDescript{
-    position: relative;
-    left: 2%;
-    width:96%;
 }
 
 .rightImgTest{
@@ -1097,11 +1090,11 @@ highlights
     width: 90%;
 }
 
-@media only screen and (max-width : 768px ) {    
+@media only screen and (max-width : 767px ) {    
     .highlight-content>img{
         width: 5%;
         position: absolute;
-        bottom: 97%;
+        bottom: 98%;
     }
 }
 
@@ -1172,8 +1165,85 @@ ASSISTANCE FOR
 }
 
 /**************************** MEDIA QUERIES*************************************/
-@media only screen and (max-width : 768px ) {    
+@media only screen and (max-width : 767px ) {    
     #SL-category-hr{
         display: none;
+    }
+    .descript{
+        margin-left: 6%;
+        margin-right: 6%;
+    }
+    .panel-back{
+        margin-left: 0.3%;
+        width: 100%;
+    }
+    .tab-back{
+        margin-top: 55px; 
+    }
+    .tabs-left>li{
+        text-align: center;
+    }
+    .tabs-left>li>a{
+        border-radius: 4px 4px 4px 4px;
+    }
+    .tabs-left{
+        border-right: none;
+    }
+    #leftImg{
+        width:52px;
+        left:10%;
+        margin-top: 40px;
+    }
+    #secondCol{
+        display: none;
+    }
+    .background{
+        margin-top: 55px;
+    }
+    
+    #mainImage{
+        margin-left: 0;
+    }
+    
+    #followTag{
+        left:8%;
+        top:33%;
+    }
+    
+    .slideImage{
+        margin-top: 2%;
+        margin-left: 0.5%;
+        width: 32%;
+        display: inline-block;
+    }
+    
+    .background-category{
+        margin-top: 50px;
+        margin-left: 2%;
+        width: 96%;
+    }
+    
+    .contentDevice>.active{
+        display: inline-block;
+    }
+    
+}
+
+@media only screen and (max-width : 1200px ) and (min-width: 768px) {
+    .tab-back{
+        margin-top: 10.5%;
+    }
+}
+
+@media only screen and (max-width : 768px ) and (min-width: 640px) {
+    .tabs-left>li{
+        display:inline-block;
+        width: 33%;
+    }
+}
+
+@media only screen and (min-width : 1919px ) {    
+    .secondTitle{
+        padding-top: 7%;
     }
 }
