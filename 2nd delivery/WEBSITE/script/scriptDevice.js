@@ -19,7 +19,7 @@ $(document).ready(ready);
 
 function ready(){
     
-    var w = $(this).width();
+    var w = $(window).width();
     if (w < 768) {
             $(".transition-panel").appendTo(".tab-back");
     }

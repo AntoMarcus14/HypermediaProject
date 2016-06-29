@@ -1252,6 +1252,13 @@ ASSISTANCE FOR
     }
 }
 
+@media only screen and (max-width : 480px ) {    
+    .btn-group>.btn{
+        display: block;
+        float: none;
+    }
+}
+
 @media only screen and (min-width : 1919px ) {    
     .secondTitle{
         padding-top: 7%;
