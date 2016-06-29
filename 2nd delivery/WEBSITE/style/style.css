@@ -1227,7 +1227,11 @@ ASSISTANCE FOR
         display: inline-block;
     }
     
-    .transition-panel
+    .transition-panel{
+        margin-top: 4px;
+        width:50%;
+        margin-left: 25%;
+    }
     
 }
 
@@ -1241,6 +1245,10 @@ ASSISTANCE FOR
     .tabs-left>li{
         display:inline-block;
         width: 33%;
+    }
+    
+    #mainDeviceImg{
+        width:65%;
     }
 }
 
