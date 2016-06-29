@@ -562,8 +562,8 @@ WhoWeAre
     width:80%;
     position: relative;
     left: 20%;
-    padding-top: 40%;
-    padding-bottom: 15%
+    margin-top: 40%;
+    margin-bottom: 15%;
 }
 
 #rightImg{
