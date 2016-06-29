@@ -59,34 +59,20 @@ function createFilterPanel(filter){
 
 
 //resets the orientation info in case there are 2 consecutive transitions of multiple topics
-function resetOrientation(orientation){
+function resetOrientation(orientation, row, short){
     orientComp = orientation.split(" > ");
     if(orientComp[0]=="Promotions" && orientComp.length>=4  || orientComp.length>=5) {
-        
-        var name = orientComp[orientComp.length-2];
-        var newOrientation = "";
-        $.ajax({
-        method: "POST",
-        //dataType: "json", //type of data
-        crossDomain: true, //localhost purposes
-        url: "http://tim3m.altervista.org/searchName.php", //Relative or absolute path to file.php file
-        data : {name : name},
-        success: function(response) {
-            console.log(JSON.parse(response));
-            var result=JSON.parse(response);
-            newOrientation = newOrientation + result[0].TableName + " > " + result[0].Category + " > " + name + " > <u>" + orientComp[orientComp.length-1] + "</u>";
-            $("#orientation").html(newOrientation);
-            return newOrientation;
-            
-        },
-        error: function(request,error) 
-        {
-            console.log("Error");
+        //reset the orientation info
+        if(short!=null) {
+            newOrientation = row.TableName + " > " + row.Category + " > " + orientComp[orientComp.length-1];
         }
-        });
+        else{
+            newOrientation = row.TableName + " > " + row.Category + " > " + orientComp[orientComp.length-2] + " > " + orientComp[orientComp.length-1];
+        }
+        return newOrientation;
     }
     else{
         //if don't have to reset the orientation info the function returns the same orientation
-        return addTag(orientation);
+        return orientation;
     }
 }

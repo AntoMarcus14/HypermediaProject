@@ -20,7 +20,10 @@ function ready(){
         data : {category : slcategory, slID : slID},
         success: function(response) {
             console.log(JSON.parse(response));
-            var category=JSON.parse(response);  //è un array di array associativo (primo indice: numero riga, secondo indice: nome attributo)      
+            var category=JSON.parse(response);  //è un array di array associativo (primo indice: numero riga, secondo indice: nome attributo)
+            var row = {TableName: "Smart Life Services", Category: category[0].Category};
+            orientation = resetOrientation(orientation, row, "ShortTransition");
+            orientComp = orientation.split(" > ");
             $("#orientation").html(addTag(orientation));
             if(category[0].Subscription==""){
                 $("#subscript").hide();
@@ -50,18 +53,18 @@ function ready(){
             }
             var decodedUrl = decodeURI(window.location.href);
             if(slcategory=="Promotions" || orientComp[orientComp.length-3]=="Smart Life Services"){
-                $(".glyphicon-arrow-up").parent().append("  Up to " + slcategory);
+                $(".glyphicon-arrow-up").parent().append("  Up to " + category[0].Category);
                 if(slcategory=="Promotions"){
                     $(".glyphicon-arrow-up").parent().attr("href", "promotions.html");
                 }
                 else{
-                    $(".glyphicon-arrow-up").parent().attr("href", "sl-by-category.html?cat=" + slcategory);
+                    $(".glyphicon-arrow-up").parent().attr("href", "sl-by-category.html?cat=" + category[0].Category);
                 }
             }
             else{
                $(".glyphicon-arrow-up").parent().hide();
                $(".glyphicon-arrow-right").parent().hide();  
-               $(".glyphicon-arrow-left").parent().html("<span class=\"glyphicon glyphicon-arrow-left\">\</span>  Back to " + slcategory);     
+               $(".glyphicon-arrow-left").parent().html("<span class=\"glyphicon glyphicon-arrow-left\">\</span>  Back to " + category[0].Category);     
                orientation=orientation.replace(" > " + orientComp[orientComp.length-1], "");
                $(".glyphicon-arrow-left").parent().attr("href", "device.html?cat=" + orientation);    
             }

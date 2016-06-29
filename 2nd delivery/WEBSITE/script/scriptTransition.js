@@ -37,7 +37,8 @@ function ready(){
             var assistances=JSON.parse(response);               
             $(".title-without-tab").append(name1);
             $(".col-sm-3").find("img").attr("src",assistances[0].sourceI);
-            $("#orientation").html(resetOrientation(orientation));
+            orientation = resetOrientation(orientation, assistances[0], null);
+            $("#orientation").html(addTag(orientation));
             for (var i=0; i < assistances.length; i++){
                 content = content + oddRow;
                 i++;
@@ -64,6 +65,7 @@ function ready(){
             $(".img-content-style").each(function(i,el){
                 $(el).attr("src",assistances[i].destI);
             });
+            console.log(orientation);
             orientation = orientation.replace(" > " + orientComp[orientComp.length-1], "");
             if(type1=="Assistance for Devices"){
                 $(".button-back-to-device").attr("href","device.html?ass=" + orientation);

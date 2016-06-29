@@ -10,14 +10,16 @@ else {
     # extract results mysqli_result::fetch_array
     $name = $_POST['name'];
     $type = $_POST['type'];
-    $query1 = "SELECT Source, Destination, Active, device.Image AS sourceI, assistanceService.Image AS destI FROM transition LEFT JOIN device ON transition.Source = device.Name 
+    $query1 = "SELECT Source, Destination, Active, device.Image AS sourceI, assistanceService.Image AS destI, device.Category, 'Devices' AS TableName FROM transition 
+               LEFT JOIN device ON transition.Source = device.Name 
                LEFT JOIN assistanceService ON transition.Destination = assistanceService.Name 
                WHERE Source = '$name' ";
-    $query2 = "SELECT Source, Destination, Active, assistanceService.Image AS sourceI, device.Image as destI FROM transition LEFT JOIN assistanceService 
+    $query2 = "SELECT Source, Destination, Active, assistanceService.Image AS sourceI, device.Image as destI, assistanceService.Category, 'Assistance Services' as TableName                FROM transition LEFT JOIN assistanceService 
                ON transition.Source = assistanceService.Name 
                LEFT JOIN device ON transition.Destination = device.Name 
                WHERE Source = '$name' ";
-    $query3 = "SELECT Source, Destination, Active, slService.Image AS sourceI, device.Image AS destI FROM transition LEFT JOIN slService ON transition.Source = slService.Title 
+    $query3 = "SELECT Source, Destination, Active, slService.Image AS sourceI, device.Image AS destI, slService.Category, 'Smart Life Services' as TableName FROM transition
+               LEFT JOIN slService ON transition.Source = slService.Title 
                LEFT JOIN device ON transition.Destination = device.Name 
                WHERE Source = '$name' ";
     if($type == "Assistance for Devices") {

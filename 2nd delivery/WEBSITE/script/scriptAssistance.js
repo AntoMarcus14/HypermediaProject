@@ -67,14 +67,20 @@ function ready(){
               $(".transition-panel" + ">h4>a").attr("style","color:lightsteelblue");    
             }
             
-            console.log("finished2");
-            if(orientComp[orientComp.length-2]=="Highlights"){
-                $(".glyphicon-arrow-up").parent().attr("href","highlights.html"); 
-                $(".glyphicon-arrow-up").parent().append("   Up to " + orientComp[orientComp.length-2]);
-            } else {
-                $(".glyphicon-arrow-up").parent().attr("href","assistance-by-category.html?ass=" + orientComp[orientComp.length-2]);
-                $(".glyphicon-arrow-up").parent().append("   Up to " + orientComp[orientComp.length-2]);
+            if(orientComp[orientComp.length-3]=="Assistance Services") {
+                if(orientComp[orientComp.length-2]=="Highlights"){
+                    $(".glyphicon-arrow-up").parent().attr("href","highlights.html"); 
+                    $(".glyphicon-arrow-up").parent().append("   Up to " + orientComp[orientComp.length-2]);
+                } else {
+                    $(".glyphicon-arrow-up").parent().attr("href","assistance-by-category.html?ass=" + orientComp[orientComp.length-2]);
+                    $(".glyphicon-arrow-up").parent().append("   Up to " + orientComp[orientComp.length-2]);
+                }
             }
+            else{
+                $(".btn-color").html("<span class=\"glyphicon glyphicon-arrow-left\"></span>   Back to AS list");
+                $(".btn-color").attr("href", "assistance-for-devices.html?dev=" + orientation.replace(" > " + aService[0].Name,""));
+            }
+            
         },
         error: function(request,error) 
         {
