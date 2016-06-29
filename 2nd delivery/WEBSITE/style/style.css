@@ -561,15 +561,15 @@ WhoWeAre
 #leftImg{
     width:80%;
     position: relative;
-    left: 5%;
-    padding-top: 15%;
+    left: 20%;
+    padding-top: 40%;
     padding-bottom: 15%
 }
 
 #rightImg{
     position: relative;
     width: 80%;
-    margin-top: -25%;
+    margin-top: 6%;
     left: 12%;
     padding-bottom: 5%;
 }
@@ -584,8 +584,8 @@ WhoWeAre
 
 .descript{
     position: relative;
-    left: 2%;
-    width: 105%;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .thirdTitle{
@@ -1169,4 +1169,11 @@ ASSISTANCE FOR
 
 .transition-table-row{
    text-align: center;
+}
+
+/**************************** MEDIA QUERIES*************************************/
+@media only screen and (max-width : 768px ) {    
+    #SL-category-hr{
+        display: none;
+    }
 }
