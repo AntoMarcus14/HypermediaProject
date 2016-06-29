@@ -19,6 +19,11 @@ $(document).ready(ready);
 
 function ready(){
     
+    var w = $(this).width();
+    if (w < 768) {
+            $(".transition-panel").appendTo(".tab-back");
+    }
+    
     var params = (window.location.search.replace("?", "")).split("=");
     var orientation = decodeURIComponent(params[1]);
     if (params.length>=2) {
@@ -122,6 +127,16 @@ function ready(){
         }
       });
     }
+    
+    $(window).on("resize", function() {
+        var w = $(this).width();
+        if (w < 768) {
+            $(".transition-panel").appendTo(".tab-back");
+        }
+        else {
+            $(".transition-panel").insertAfter(".tabs-left");
+        }
+    });
     
     $("#1devicePic").click(function(){
         $("#mainDeviceImg").fadeOut( "fast", function(){
