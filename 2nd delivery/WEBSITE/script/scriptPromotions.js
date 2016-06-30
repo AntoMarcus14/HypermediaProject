@@ -118,6 +118,10 @@ function ready(){
                 }
             });
             createFilterPanel(filterPanel);
+            var w = $(window).width();
+            if (w < 768) {
+                $(".in").removeClass("in");
+            }
             
         },
         error: function(request,error) 
@@ -126,7 +130,12 @@ function ready(){
         }
     });
     
-    
+    $(window).on("resize", function() {
+        var w = $(this).width();
+        if (w < 768) {
+            $(".in").removeClass("in");
+        }
+    });
     $('#filterPanel').on('hidden.bs.collapse', toggleChevron);
 	$('#filterPanel').on('shown.bs.collapse', toggleChevron);
     $(document).on("click", "input:checkbox", function() {

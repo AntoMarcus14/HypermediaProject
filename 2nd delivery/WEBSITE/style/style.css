@@ -26,6 +26,10 @@
 }
 
 #image-box{
+    float: left;
+    margin-right: 25px;
+    margin-bottom: 5px;
+    clear: both;
     background-color: white;
     width: 17%;
     height: auto;
@@ -36,15 +40,14 @@
     vertical-align: middle;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
-    display: inline-block;
 }
 
 #orientation{
+    overflow: auto;
+    display: block;
     color: white;
     font-size: 18px;
-    margin-left: 2%;
     vertical-align: bottom;
-    display: inline-block;
 }
 
 .icon-bar{
@@ -1172,7 +1175,12 @@ ASSISTANCE FOR
 
 /**************************** MEDIA QUERIES*************************************/
 
-@media only screen and (max-width : 767px ) {    
+@media only screen and (max-width : 767px ) { 
+    
+    #orientation{
+        margin-left: 10px;
+        font-size: 15px;
+    }
     #SL-category-hr{
         display: none;
     }
@@ -1252,7 +1260,7 @@ ASSISTANCE FOR
 
 @media only screen and (max-width : 1200px ) and (min-width: 768px) {
     .tab-back{
-        margin-top: 10.5%;
+        margin-top: 11%;
     }
     
     .button-back-to-device{

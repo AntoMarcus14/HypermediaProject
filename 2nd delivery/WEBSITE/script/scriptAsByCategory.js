@@ -123,6 +123,10 @@ function ready(){
             $(".background-category").append(content);
             if(bol==1){
                 createFilterPanel(assistances[assistances.length-1]); //crera il filtro solo dov'è necessario che ci sia
+                var w = $(window).width();
+                if (w < 768) {
+                    $(".in").removeClass("in");
+                }
             }
             var temp = [assistances[0].SubCategory];
             var titleName = [assistances[0].Tags];
@@ -166,6 +170,13 @@ function ready(){
         } 
     });
     }
+    
+    $(window).on("resize", function() {
+        var w = $(this).width();
+        if (w < 768) {
+            $(".in").removeClass("in");
+        }
+    });
     $('#filterPanel').on('hidden.bs.collapse', toggleChevron);
 	$('#filterPanel').on('shown.bs.collapse', toggleChevron);
     $(document).on("click", "input:checkbox", function() {
