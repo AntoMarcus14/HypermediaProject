@@ -1269,3 +1269,8 @@ ASSISTANCE FOR
         padding-top: 7%;
     }
 }
+
+.landmark-btn-active{
+    background-color: #0b3d86;
+    color: white;
+}
