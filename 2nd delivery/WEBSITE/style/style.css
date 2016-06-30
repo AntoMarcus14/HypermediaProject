@@ -776,9 +776,10 @@ Button to go to the highlights in AssistanceService page
 }
 
 .content{
+    margin-right: 2%;
     position: relative;
     text-align:left;
-    padding-right: 2%;
+    margin-left: 2%;
 }
 
 #imgCont{
@@ -820,10 +821,6 @@ Button to go to the highlights in AssistanceService page
     color: #0b3d86;
     text-align: center;
     margin: 0 0 0 0;
-}
-
-#title{
-    margin-top: 1%;
 }
 
 #imageSl{
@@ -1168,6 +1165,7 @@ ASSISTANCE FOR
 }
 
 /**************************** MEDIA QUERIES*************************************/
+
 @media only screen and (max-width : 767px ) {    
     #SL-category-hr{
         display: none;
@@ -1234,6 +1232,10 @@ ASSISTANCE FOR
         margin-top: 4px;
         width:50%;
         margin-left: 25%;
+    }
+    .content{
+        margin-left: 6%;
+        margin-right: 6%;
     }
     
 }
