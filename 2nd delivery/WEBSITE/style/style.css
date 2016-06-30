@@ -26,6 +26,10 @@
 }
 
 #image-box{
+    float: left;
+    margin-right: 25px;
+    margin-bottom: 5px;
+    clear: both;
     background-color: white;
     width: 17%;
     height: auto;
@@ -36,15 +40,14 @@
     vertical-align: middle;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
-    display: inline-block;
 }
 
 #orientation{
+    overflow: auto;
+    display: block;
     color: white;
     font-size: 18px;
-    margin-left: 2%;
     vertical-align: bottom;
-    display: inline-block;
 }
 
 .icon-bar{
@@ -674,6 +677,10 @@ Button to go to the highlights in AssistanceService page
        Assistance service page
 ********************************************************************************/
 
+#faq{
+    padding-bottom: 1%;
+}
+
 .asImage{
     width: 40%;
 }
@@ -685,6 +692,7 @@ Button to go to the highlights in AssistanceService page
 
 #accordion{
     width: 98%;
+    margin-bottom: 0;
 }
 
 .faqIcon{
@@ -967,6 +975,7 @@ ASSISTANCE BY CATEGORY
 			border-top-right-radius:0px;
 }
 .behclick-panel .list-group-item {
+            word-wrap: break-word;
             border-color: transparent;
             background-color: #EEEEEE;
 			border-right:0px;
@@ -1166,7 +1175,12 @@ ASSISTANCE FOR
 
 /**************************** MEDIA QUERIES*************************************/
 
-@media only screen and (max-width : 767px ) {    
+@media only screen and (max-width : 767px ) { 
+    
+    #orientation{
+        margin-left: 10px;
+        font-size: 15px;
+    }
     #SL-category-hr{
         display: none;
     }
@@ -1238,11 +1252,19 @@ ASSISTANCE FOR
         margin-right: 6%;
     }
     
+    .asDescription{
+        margin-left: 6%;
+        margin-right: 6%;
+    }
 }
 
 @media only screen and (max-width : 1200px ) and (min-width: 768px) {
     .tab-back{
-        margin-top: 10.5%;
+        margin-top: 11%;
+    }
+    
+    .button-back-to-device{
+        white-space: normal;
     }
 }
 
@@ -1270,6 +1292,15 @@ ASSISTANCE FOR
     }
 }
 
+@media only screen and (max-width : 658px ) {
+    .categoryContent{
+        text-align: center;
+    }
+    
+    .element{
+        margin-left: 0;
+    }
+}
 .landmark-btn-active{
     background-color: #0b3d86;
     color: white;

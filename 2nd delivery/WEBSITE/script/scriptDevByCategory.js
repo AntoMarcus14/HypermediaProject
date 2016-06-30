@@ -19,6 +19,7 @@ function toggleChevron(e) {
 
 function ready(){
     
+    
     var params = (window.location.search.replace("?", "")).split("=");
     var catName = decodeURIComponent(params[1]);
     console.log(catName);
@@ -38,6 +39,10 @@ function ready(){
             $("#orientation").append("<u>" + catName + "</u>");
             
             createFilterPanel(devices[devices.length-1]);
+            var w = $(window).width();
+            if (w < 768) {
+                $(".in").removeClass("in");
+            }
     
             var content="";
             for(i=0; i<devices.length-1; i++) {
@@ -74,6 +79,13 @@ function ready(){
     });
     
     }
+    
+    $(window).on("resize", function() {
+        var w = $(this).width();
+        if (w < 768) {
+            $(".in").removeClass("in");
+        }
+    });
     
     $('#filterPanel').on('hidden.bs.collapse', toggleChevron);
 	$('#filterPanel').on('shown.bs.collapse', toggleChevron);
