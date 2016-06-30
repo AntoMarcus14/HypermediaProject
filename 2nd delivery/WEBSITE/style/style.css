@@ -486,6 +486,7 @@ h3.price{
     margin-left: 0px;
     border: 1px solid black;
     border-radius: 4px;
+    width: 100%;
 }
 
 .inputGroupTitle{
@@ -1258,16 +1259,6 @@ ASSISTANCE FOR
     .btn-group>.btn{
         display: block;
         float: none;
-    }
-    
-    .btn-group>.btn:last-child{
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-    }
-    
-    .btn-group>.btn:first-child{
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
     }
 }
 
