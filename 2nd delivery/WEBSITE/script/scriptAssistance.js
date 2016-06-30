@@ -22,6 +22,11 @@ var nextPanel="<div class=\"panel panel-default\">\
                 </div>";
 
 function ready(){
+    
+    var w = $(window).width();
+    if (w < 768) {
+            $(".transition-panel").appendTo(".tab-back");
+    }
         
     var params = (window.location.search.replace("?", "")).split("=");
     var orientation = decodeURIComponent(params[1]);
@@ -88,6 +93,16 @@ function ready(){
         }
     });
     }
+    
+    $(window).on("resize", function() {
+        var w = $(this).width();
+        if (w < 768) {
+            $(".transition-panel").appendTo(".tab-back");
+        }
+        else {
+            $(".transition-panel").insertAfter(".tabs-left");
+        }
+    });
    
 
   $(document).on("hide.bs.collapse", ".panel-collapse", function(){

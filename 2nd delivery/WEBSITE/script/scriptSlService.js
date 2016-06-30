@@ -81,4 +81,14 @@ function ready(){
         }
     });
     }
+    
+    $(window).on("resize", function() {
+        var w = $(this).width();
+        if (w < 768) {
+            $(".transition-panel").appendTo(".tab-back");
+        }
+        else {
+            $(".transition-panel").insertAfter(".tabs-left");
+        }
+    });
 }
