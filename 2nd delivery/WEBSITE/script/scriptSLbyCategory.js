@@ -63,9 +63,9 @@ function ready(){
     if(param.length>=2){
     $(".title-without-tab").html(catName);
     if(catName=="TV & Entertainment" || catName=="Home & Family"){    
-        $(".topImg").attr("src","../img/"+catName.replace(" & ","__")+".png");
+        $(".topImg").attr("src","../img/"+catName.replace(" & ","")+".png");
     }else{
-        $(".topImg").attr("src","../img/"+catName.replace(/ /g,"_")+".png");
+        $(".topImg").attr("src","../img/"+catName.replace(/ /g,"")+".png");
     }
     $.ajax({
         method: "POST",
