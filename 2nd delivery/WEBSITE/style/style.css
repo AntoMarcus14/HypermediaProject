@@ -1268,7 +1268,7 @@ ASSISTANCE FOR
     }
 }
 
-@media only screen and (max-width : 768px ) and (min-width: 480px) {
+@media only screen and (max-width : 768px ) and (min-width: 540px) {
     .tabs-left>li{
         display:inline-block;
         width: 33%;
