@@ -85,7 +85,7 @@ function ready(){
             var tab="";
             var i=0;
             for(var index in devices[0]) {
-                if (devices[0].hasOwnProperty(index) && i>=16 && devices[0][index]!=null) {
+                if (devices[0].hasOwnProperty(index) && i>=17 && devices[0][index]!=null) {
                     tab=tab+"<tr><td>" + index + "</td><td>" + devices[0][index] + "</td></tr> ";
                 }
                 i++;
