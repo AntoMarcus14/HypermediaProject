@@ -1177,6 +1177,21 @@ ASSISTANCE FOR
 
 @media only screen and (max-width : 767px ) { 
     
+    #buy>.row>.col-sm-8{
+        padding-left: 20px;
+    }
+    
+    .summaryColumn{
+        padding-left: 20px;
+    }
+    .purchaseSummary{
+        margin-left: 2%;
+    }
+    
+    .firstTitle{
+        margin-left: 3%;
+        margin-right: 3%;
+    }
     #orientation{
         margin-left: 10px;
         font-size: 15px;
