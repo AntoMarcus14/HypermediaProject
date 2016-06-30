@@ -486,6 +486,7 @@ h3.price{
     margin-left: 0px;
     border: 1px solid black;
     border-radius: 4px;
+    width: 100%;
 }
 
 .inputGroupTitle{
