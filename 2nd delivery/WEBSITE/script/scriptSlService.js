@@ -5,6 +5,12 @@ var arrow = "<a href=\"#\" class=\"btn btn-color btn-default\">\
 $(document).ready(ready);
 
 function ready(){
+    
+    var w = $(window).width();
+    if (w < 768) {
+            $(".transition-panel").appendTo(".tab-back");
+    }
+    
     var param = (window.location.search.replace("?","")).split("=");
     var orientation = decodeURIComponent(param[1]);
     if(param.length>=2){
